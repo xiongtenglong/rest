@@ -71,7 +71,7 @@
 
 									<div class="tab-content">
 										<div class="tab-content-inner" data-content="signup">
-											<form action="/regist.action">
+											<form action="/doRegist">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="username">用户名或邮箱</label>
@@ -100,7 +100,7 @@
 										</div>
 
 										<div class="tab-content-inner active" data-content="login">
-											<form action="/login.action" method="post">
+											<form action="/doLogin" method="post">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="username">用户名或邮箱</label>
