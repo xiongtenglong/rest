@@ -1,5 +1,6 @@
 package com.rest.web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -7,10 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rest.common.vo.SysResult;
 import com.rest.web.pojo.User;
+import com.rest.web.service.UserService;
 import com.sun.jmx.snmp.UserAcl;
 
 @Controller
 public class LoginAndRegistController {
+	@Autowired
+	private UserService UserService;
 	//转向登陆页面
 	@RequestMapping("/login")
 	public String toLogin(){
@@ -26,6 +30,7 @@ public class LoginAndRegistController {
 	@RequestMapping("/doRegist")
 	@ResponseBody
 	public SysResult doRegist(User user){
-		return SysResult.oK();
+		String username = UserService.saveRegist(user);
+		return SysResult.oK(username);
 	}
 }
