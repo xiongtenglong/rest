@@ -8,5 +8,7 @@ public class TestGit2 {
 	public void name() {
 		System.out.println("你们好");
 		System.out.println("hahah");
+		System.out.println("dajiahao");
+		System.out.println("hello");
 	}
 }
