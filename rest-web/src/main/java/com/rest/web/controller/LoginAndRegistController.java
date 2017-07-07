@@ -14,7 +14,7 @@ import com.sun.jmx.snmp.UserAcl;
 @Controller
 public class LoginAndRegistController {
 	@Autowired
-	private UserService UserService;
+	private UserService userService;
 	//转向登陆页面
 	@RequestMapping("/login")
 	public String toLogin(){
@@ -30,7 +30,7 @@ public class LoginAndRegistController {
 	@RequestMapping("/doRegist")
 	@ResponseBody
 	public SysResult doRegist(User user){
-		String username = UserService.saveRegist(user);
+		String username = userService.saveRegist(user);
 		return SysResult.oK(username);
 	}
 }
