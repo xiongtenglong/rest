@@ -74,7 +74,13 @@
 											<form action="/doRegist" method="POST">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名或邮箱</label>
+														<label for="username">用户名</label>
+														<input type="text" class="form-control" id="username" name="username">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">手机号码</label>
 														<input type="text" class="form-control" id="username" name="username">
 													</div>
 												</div>
@@ -103,7 +109,7 @@
 											<form action="/doLogin" method="post">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名或邮箱</label>
+														<label for="username">用户名</label>
 														<input type="text" class="form-control" id="username" name="username">
 													</div>
 												</div>
