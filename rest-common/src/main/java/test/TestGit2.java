@@ -10,5 +10,6 @@ public class TestGit2 {
 		System.out.println("hahah");
 		System.out.println("dajiahao");
 		System.out.println("hello");
+		System.out.println("dajiahao");
 	}
 }
