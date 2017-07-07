@@ -11,6 +11,7 @@ import com.rest.common.po.BasePojo;
 
 @Table(name="tb_user")
 public class User extends BasePojo{
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;

@@ -71,23 +71,29 @@
 
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
-											<form action="/regist">
+											<form action="/doRegist" method="POST" id="registform">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名或邮箱</label>
-														<input type="text" class="form-control" id="username" name="username">
+														<label for="username">用户名</label>
+														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username" >
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">手机号码</label>
+														<input type="text" placeholder="请输入手机号" class="form-control" id="phone" name="phone">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password">密码</label>
-														<input type="password" class="form-control" id="password" name="password">
+														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password2">确认密码</label>
-														<input type="password" class="form-control" id="password2" name="password2">
+														<input type="password" placeholder="请输入确认密码" class="form-control" id="password2" name="password2">
 													</div>
 												</div>
 
@@ -99,27 +105,28 @@
 											</form>	
 										</div>
 
-									</div>
-									<div class="tab-content-inner" data-content="login">
-										<form action="/login" method="post">
-											<div class="row form-group">
-												<div class="col-md-12">
-													<label for="username">用户名或邮箱</label>
-													<input type="text" class="form-control" id="username" name="username">
+										<div class="tab-content-inner" data-content="login" >
+											<form action="/doLogin" method="post" id="loginform">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">用户名</label>
+														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username">
+													</div>
 												</div>
-											</div>
-											<div class="row form-group">
-												<div class="col-md-12">
-													<label for="password">密码</label>
-													<input type="password" class="form-control" id="password" name="password">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password">密码</label>
+														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password">
+													</div>
 												</div>
-											</div>
-											<div class="row form-group">
-												<div class="col-md-12">
-													<input type="submit" class="btn btn-primary" value="登录">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary" value="登录">
+													</div>
 												</div>
-											</div>
-										</form>
+											</form>	
+										</div>
+
 									</div>
 								</div>
 							</div>
@@ -146,6 +153,10 @@
 	<script src="/login/js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="/login/js/main.js"></script>
+	<!-- 前端校验 -->
+	<link rel="stylesheet" href="/bootstrap/validator/css/bootstrapValidator.css"/>
+	<script type="text/javascript" src="/bootstrap/validator/js/bootstrapValidator.js"></script>
+	<script type="text/javascript" src="/bootstrap/validate/js/language/zh_CN.js"></script>
 	</body>
 </html>
 

@@ -1,4 +1,4 @@
-package com.rest.pojo;
+package com.rest.web.pojo;
 
 import java.util.Date;
 
