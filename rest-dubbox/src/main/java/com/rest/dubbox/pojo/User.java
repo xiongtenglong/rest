@@ -1,4 +1,4 @@
-package com.rest.pojo;
+package com.rest.dubbox.pojo;
 
 import java.util.Date;
 
@@ -18,8 +18,6 @@ public class User extends BasePojo{
 	private String username;
 	private String password;
 	private String phone;
-	private Date created;
-	private Date updated;
 	public Long getId() {
 		return id;
 	}
@@ -43,18 +41,6 @@ public class User extends BasePojo{
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public Date getCreated() {
-		return created;
-	}
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-	public Date getUpdated() {
-		return updated;
-	}
-	public void setUpdated(Date updated) {
-		this.updated = updated;
 	}
 	
 }
