@@ -66,7 +66,7 @@
 									<h4 style="color: red">${errorInfo}</h4>
 									<ul class="tab-menu">
 										<li class="active gtco-first"><a href="#" data-tab="signup">注册</a></li>
-										<li class="gtco-second"><a href="#" data-tab="login">登录</a></li>
+										<li class="gtco-second "><a href="#" data-tab="login">登录</a></li>
 									</ul>
 
 									<div class="tab-content">
@@ -99,27 +99,28 @@
 											</form>	
 										</div>
 
-									</div>
-									<div class="tab-content-inner" data-content="login">
-										<form action="/login" method="post">
-											<div class="row form-group">
-												<div class="col-md-12">
-													<label for="username">用户名或邮箱</label>
-													<input type="text" class="form-control" id="username" name="username">
+										<div class="tab-content-inner" data-content="login">
+											<form action="/login" method="post">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">用户名或邮箱</label>
+														<input type="text" class="form-control" id="username" name="username">
+													</div>
 												</div>
-											</div>
-											<div class="row form-group">
-												<div class="col-md-12">
-													<label for="password">密码</label>
-													<input type="password" class="form-control" id="password" name="password">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password">密码</label>
+														<input type="password" class="form-control" id="password" name="password">
+													</div>
 												</div>
-											</div>
-											<div class="row form-group">
-												<div class="col-md-12">
-													<input type="submit" class="btn btn-primary" value="登录">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary" value="登录">
+													</div>
 												</div>
-											</div>
-										</form>
+											</form>	
+										</div>
+
 									</div>
 								</div>
 							</div>

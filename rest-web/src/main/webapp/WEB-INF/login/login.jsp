@@ -65,12 +65,12 @@
 								<div class="tab">
 									<h4 style="color: red">${errorInfo}</h4>
 									<ul class="tab-menu">
-										<li class="active gtco-first"><a href="#" data-tab="signup">注册</a></li>
-										<li class="gtco-second"><a href="#" data-tab="login">登录</a></li>
+										<li class="gtco-first"><a href="#" data-tab="signup">注册</a></li>
+										<li class="active gtco-second"><a href="#" data-tab="login">登录</a></li>
 									</ul>
 
 									<div class="tab-content">
-										<div class="tab-content-inner active" data-content="signup">
+										<div class="tab-content-inner" data-content="signup">
 											<form action="/regist.action">
 												<div class="row form-group">
 													<div class="col-md-12">
@@ -99,7 +99,7 @@
 											</form>	
 										</div>
 
-										<div class="tab-content-inner" data-content="login">
+										<div class="tab-content-inner active" data-content="login">
 											<form action="/login.action" method="post">
 												<div class="row form-group">
 													<div class="col-md-12">
