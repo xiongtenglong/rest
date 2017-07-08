@@ -14,7 +14,7 @@
 		<!-- mybatis-config.xml -->
 		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
 		<!-- 别名包 -->
-		<property name="typeAliasesPackage" value="com.rest.manage.pojo"/>
+		<property name="typeAliasesPackage" value="com.rest.dubbox.pojo"/>
 		<!-- mapper.xml -->
 		<property name="mapperLocations" value="classpath:mybatis/mappers/*.xml"/>
 	</bean>
@@ -22,7 +22,7 @@
 	<!-- 定义Mapper接口扫描器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 扫描mapper包 -->
-		<property name="basePackage" value="com.rest.manage.mapper"/>
+		<property name="basePackage" value="com.rest.dubboProvider.mapper"/>
 	</bean>
 
 </beans>
