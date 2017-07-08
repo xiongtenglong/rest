@@ -25,23 +25,9 @@ public class UserService extends BaseService<User>{
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 	
 	//用户监测
-	public Boolean check(String val, Integer typeNum){
-		Map<String,Object> params = new HashMap<String,Object>();
-		if(1==typeNum){
-			params.put("colname", "username");
-		}else if(2==typeNum){
-			params.put("colname", "phone");
-		}else{
-			params.put("colname", "email");
-		}
-		params.put("val", val);
-		
-		Integer i = userMapper.check(params);
-		if(0==i){	//不存在
-			return false;
-		}else{
-			return true;
-		}
+	public Boolean check(String username){
+		User user = userMapper.check(username);
+		return null != user;
 	}
 	
 	//注册

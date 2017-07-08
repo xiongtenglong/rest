@@ -8,5 +8,9 @@ import com.rest.sso.pojo.User;
 
 
 public interface UserMapper extends SysMapper<User>{
-	public Integer check(Map<String,Object> map);
+
+	User check(String username);
+
+	
+	
 }

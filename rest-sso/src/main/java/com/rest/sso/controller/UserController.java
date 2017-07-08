@@ -22,11 +22,11 @@ public class UserController {
 	private RedisService redisService;
 	
 	//http://sso.jt.com/user/check/{param}/{type}
-	@RequestMapping("/check/{param}/{type}")
+	@RequestMapping("/check/{username}")
 	@ResponseBody
-	public SysResult check(@PathVariable String param,@PathVariable Integer type){
+	public SysResult check(@PathVariable String username){
 		try{
-			Boolean b = userService.check(param, type);
+			Boolean b = userService.check(username);
 			return SysResult.oK(b);
 		}catch(Exception e){
 			return SysResult.build(201, "监测失败!");
