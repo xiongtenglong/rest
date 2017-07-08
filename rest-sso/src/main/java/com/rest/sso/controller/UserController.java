@@ -34,7 +34,7 @@ public class UserController {
 	}
 	
 	//http://sso.jt.com/user/register
-	@RequestMapping("/register")
+	@RequestMapping("/regist")
 	@ResponseBody
 	public SysResult register(User user){
 		try{

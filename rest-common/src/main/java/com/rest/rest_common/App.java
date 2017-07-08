@@ -13,5 +13,6 @@ public class App
         System.out.println("123456");
         System.out.println("88888");
         System.out.println("999999");
+
     }
 }
