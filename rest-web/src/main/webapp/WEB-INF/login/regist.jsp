@@ -75,7 +75,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="username">用户名</label>
-														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username" >
+														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username">
 													</div>
 												</div>
 												<div class="row form-group">
