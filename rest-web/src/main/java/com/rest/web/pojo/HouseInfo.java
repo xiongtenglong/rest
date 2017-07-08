@@ -24,6 +24,15 @@ public class HouseInfo extends BasePojo {
     private Integer status;
     private Integer statusAuth;
     private String evaluate;
+    private Integer areaId;
+
+    public Integer getAreaId() {
+        return areaId;
+    }
+
+    public void setAreaId(Integer areaId) {
+        this.areaId = areaId;
+    }
 
     public String getEvaluate() {
         return evaluate;
