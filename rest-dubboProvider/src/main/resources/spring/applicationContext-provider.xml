@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<!-- name:用于注册中心计算应用间依赖关系；消费者和提供者应用名称不要一样，此参数不是匹配条件；项目叫什么就填什么 -->
+	<!-- owner:应用负责人，用于服务治理，请填写负责人公司邮箱前缀 -->
+	<dubbo:application name="rest-dubboProvider" />
+
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry address="zookeeper://192.168.236.131:2181?backup=192.168.236.131:2182,192.168.236.131:2183" />
+
+	<!-- 用dubbo协议在20880端口暴露服务 -->
+	<!-- <dubbo:protocol name="dubbo" port="20880" /> -->
+	
+	<!-- 如果ID不填，缺省和name属性值一样，重复则在name后加序号。 -->
+	<!-- port:dubbo协议缺省端口为20880，rmi协议缺省端口为1099，http和hessian协议缺省端口为80  -->
+	<!-- threadpool:默认fixed -->
+	<!-- threads:服务线程池大小 -->
+	<!-- accepts:服务提供方最大可接受连接数 -->
+	<!-- payload:请求及响应数据包大小限制,单位：字节；默认是8M -->
+	<dubbo:protocol name="rest" threads="500" port="9008" contextpath="/" server="servlet" accepts="500"
+		extension="com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter" />
+	
+	<!-- 
+	 <dubbo:annotation package="com.jt.dubbo.cart.rest.service.impl" />
+ 	-->
+ 	
+ 	<!-- timeout：远程服务调用超时时间(毫秒) -->
+ 	<!-- loadbalance：负载均衡策略，可选值：random,roundrobin,leastactive，分别表示：随机，轮循，最少活跃调用 -->
+	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseAreaService" ref="dubboHouseAreaService" protocol="rest" timeout="10000"/>
+	<bean id="dubboHouseAreaService" class="com.rest.dubboProvider.service.DubboxHouseAreaServiceImpl" />
+	
+</beans>

@@ -5,9 +5,6 @@
   <packaging>war</packaging>
   <name>rest-dubboProvider Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <build>
-    <finalName>rest-dubboProvider</finalName>
-  </build>
   <parent>
   	<groupId>com.rest</groupId>
   	<artifactId>rest-parent</artifactId>
@@ -53,4 +50,18 @@
 			<version>3.0.7.Final</version>
 		</dependency>
   </dependencies>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>9008</port>
+					<path>/</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 </project>
