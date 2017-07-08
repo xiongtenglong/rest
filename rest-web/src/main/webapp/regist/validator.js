@@ -52,9 +52,9 @@ $().ready(function(){
 		if(!formObj.checkNull("username", "用户名不能为空")){
 			return;
 		}
-		$("#usernameId").ajax({
-			url : "http://sso.rest.com/user/check/"+username+"?r="+Math.random(),
-			dataType : "json",
+		$.ajax({
+			url : "http://sso.rest.com/user/check/"+username,
+			dataType : "jsonp",
 			success : function(data) {
                 if (!data.data) {
                 	$("#usernameId").html("<font color='green'>恭喜你,该用户名可以使用!</font>");

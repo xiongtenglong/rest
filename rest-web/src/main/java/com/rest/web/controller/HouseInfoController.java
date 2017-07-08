@@ -10,8 +10,8 @@ import com.rest.common.vo.SysResult;
 import com.rest.web.pojo.HouseInfo;
 import com.rest.web.service.HouseInfoService;
 
-@Controller
-@RequestMapping("")
+//@Controller
+//@RequestMapping("")
 public class HouseInfoController {
 	@Autowired
 	private HouseInfoService houseInfoService;
