@@ -106,6 +106,7 @@ public class HouseInfo extends BasePojo {
         this.notice = notice;
     }
 
+
     public Integer getStatus() {
         return status;
     }
