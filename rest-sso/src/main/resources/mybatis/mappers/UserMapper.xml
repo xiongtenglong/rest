@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jt.sso.mapper.UserMapper">
+<mapper namespace="com.rest.sso.mapper.UserMapper">
 
 	<!-- 监测：用户名，手机，邮箱 -->
-	<select id="check" parameterType="map" resultType="int">
-SELECT COUNT(*) FROM tb_user WHERE ${colname}=#{val}	
+	<select id="check" resultType="User">
+		select * from tb_user where username = #{username}
 	</select>
 </mapper>

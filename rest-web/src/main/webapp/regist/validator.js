@@ -54,7 +54,7 @@ $().ready(function(){
 		}
 		$("#usernameId").ajax({
 			url : "http://sso.rest.com/user/check/"+username+"?r="+Math.random(),
-			dataType : "jsonp",
+			dataType : "json",
 			success : function(data) {
                 if (!data.data) {
                 	$("#usernameId").html("<font color='green'>恭喜你,该用户名可以使用!</font>");
