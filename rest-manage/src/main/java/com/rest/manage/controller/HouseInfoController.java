@@ -23,7 +23,7 @@ public class HouseInfoController {
 	 * @param houseId
 	 * @return	HouseInfo 房屋对象
 	 */
-	@RequestMapping("")
+	@RequestMapping("/findHouseById/{houseId}")
 	@ResponseBody
 	public SysResult findHouseById(@PathVariable Long houseId){
 		try{
@@ -39,7 +39,7 @@ public class HouseInfoController {
 	 * @param houseId
 	 * @return	HouseInfo 房屋对象
 	 */
-	@RequestMapping("")
+	@RequestMapping("/findHouseByUserId/{userId}")
 	@ResponseBody
 	public SysResult findHouseByUserId(@PathVariable Long userId){
 		try{
@@ -71,7 +71,7 @@ public class HouseInfoController {
 	 * @param houseInfo
 	 * @return
 	 */
-	@RequestMapping("")
+	@RequestMapping("update")
 	@ResponseBody
 	public SysResult update(HouseInfo houseInfo){
 		try{
@@ -87,7 +87,7 @@ public class HouseInfoController {
 	 * @param houseInfo
 	 * @return
 	 */
-	@RequestMapping("")
+	@RequestMapping("delete")
 	@ResponseBody
 	public SysResult delete(HouseInfo houseInfo){
 		try{
