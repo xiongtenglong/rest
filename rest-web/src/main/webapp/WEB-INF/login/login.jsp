@@ -58,7 +58,7 @@
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
 
 							<span class="intro-text-small">你好，旅行者</span>
-							<h1>加入这里，让旅行更有意义</h1>
+							<h2>加入这里，让旅行更有意义</h2>
 						</div>
 						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
@@ -114,13 +114,13 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="username">用户名:</label>
-														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username"/>
+														<input type="text" placeholder="username" class="form-control" id="username" name="username" />
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="password">密码:</label>
-														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password"/>
+														<input type="password" placeholder="password" class="form-control" id="password" name="password"/>
 													</div>
 												</div>
 												<div class="row form-group">
