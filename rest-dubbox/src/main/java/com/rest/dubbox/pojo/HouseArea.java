@@ -10,7 +10,7 @@ public class HouseArea implements Serializable{
 	@Id
 	private Integer areaId;
 	private String areaName;
-	private String areaPid;
+	private Integer areaPid;
 	private Integer isParent;
 	private Integer status;
 	public Integer getAreaId() {
@@ -25,10 +25,10 @@ public class HouseArea implements Serializable{
 	public void setAreaName(String areaName) {
 		this.areaName = areaName;
 	}
-	public String getAreaPid() {
+	public Integer getAreaPid() {
 		return areaPid;
 	}
-	public void setAreaPid(String areaPid) {
+	public void setAreaPid(Integer areaPid) {
 		this.areaPid = areaPid;
 	}
 	public Integer getIsParent() {

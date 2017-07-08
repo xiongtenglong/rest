@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	private RedisService redisService;
 	
-	//http://sso.jt.com/user/check/{param}/{type}
+	//http://sso.jt.com/user/check/{param}
 	@RequestMapping("/check/{username}")
 	@ResponseBody
 	public SysResult check(@PathVariable String username){

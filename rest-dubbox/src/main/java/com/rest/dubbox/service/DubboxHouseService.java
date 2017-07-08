@@ -1,6 +1,5 @@
 package com.rest.dubbox.service;
 
-import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
