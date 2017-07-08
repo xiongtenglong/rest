@@ -35,7 +35,6 @@ public class UserService extends BaseService<User>{
 		user.setCreated(new Date());
 		user.setUpdated(user.getCreated());
 		//因为页面上不填写，随便写的值，防止数据库唯一校验出错
-		user.setEmail("temp_"+user.getPhone());
 		user.setPassword(DigestUtils.md5Hex(user.getPassword()));
 		
 		userMapper.insertSelective(user);
