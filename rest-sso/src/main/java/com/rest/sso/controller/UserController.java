@@ -26,8 +26,8 @@ public class UserController {
 	@ResponseBody
 	public SysResult check(@PathVariable String username){
 		try{
-			Boolean b = userService.check(username);
-			return SysResult.oK(b);
+			Boolean flag = userService.check(username);
+			return SysResult.oK(flag);
 		}catch(Exception e){
 			return SysResult.build(201, "监测失败!");
 		}
