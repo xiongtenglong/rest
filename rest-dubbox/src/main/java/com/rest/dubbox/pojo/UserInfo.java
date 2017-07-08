@@ -1,4 +1,4 @@
-package com.rest.pojo;
+package com.rest.dubbox.pojo;
 
 import javax.persistence.Id;
 import javax.persistence.Table;

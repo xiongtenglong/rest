@@ -23,9 +23,9 @@
 		<!-- Animate.css -->
 	<link rel="stylesheet" href="/login/login/css/animate.css">
 	<link rel="stylesheet" href="/login/login/css/bootstrap.css">
-		       <link rel="stylesheet" type="text/css" href="/login/login/css/style1.css" />
-		       <title>Fullscreen Background Image Slideshow with CSS3</title>
-		       <link rel="stylesheet" type="text/css" href="/login/login/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/login/login/css/style1.css" />
+    <title>Fullscreen Background Image Slideshow with CSS3</title>
+    <link rel="stylesheet" type="text/css" href="/login/login/css/demo.css" />
 		<!-- Theme style  -->
 	<link rel="stylesheet" href="/login/login/css/style.css">
 	<!-- Modernizr JS -->
@@ -58,7 +58,7 @@
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
 
 							<span class="intro-text-small">你好，旅行者</span>
-							<h1>加入这里，让旅行更有意义</h1>
+							<h2>加入这里，让旅行更有意义</h2>
 						</div>
 						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
@@ -74,32 +74,36 @@
 											<form action="/doRegist" method="POST" id="registform">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名</label>
-														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username" >
+														<label for="username">用户名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="usernameId" class="isnull" style="font-size: 8px;"></span></label>
+														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username" 
+															value="${param.username }" >
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">手机号码</label>
-														<input type="text" placeholder="请输入手机号" class="form-control" id="phone" name="phone">
+														<label for="phone">手机号码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="phoneId" class="isnull" style="font-size: 8px;"></span></label>
+														<input type="text" placeholder="请输入手机号" class="form-control" id="phone" name="phone"
+															value="${param.phone }" onblur="formObj.checkPhone('phone','手机号格式不对')"/>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="password">密码</label>
-														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password">
+														<label for="password">密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="passwordId" class="isnull" style="font-size: 8px;"></span></label>
+														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password" 
+															value="${param.password }" onblur="formObj.checkNull('password','密码不能为空')"/>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="password2">确认密码</label>
-														<input type="password" placeholder="请输入确认密码" class="form-control" id="password2" name="password2">
+														<label for="password2">确认密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="password2Id" class="isnull" style="font-size: 8px;"></span></label>
+														<input type="password" placeholder="请输入确认密码" class="form-control" id="password2" name="password2" 
+															value="${param.password2 }" onblur="formObj.checkPassword('password','两次密码输入不同')"/>
 													</div>
 												</div>
 
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary" value="注册">
+														<input type="submit" class="btn btn-primary" value="注册"/>
 													</div>
 												</div>
 											</form>	
@@ -109,19 +113,19 @@
 											<form action="/doLogin" method="post" id="loginform">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名</label>
-														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username">
+														<label for="username">用户名:</label>
+														<input type="text" placeholder="username" class="form-control" id="username" name="username" />
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="password">密码</label>
-														<input type="password" placeholder="请输入密码" class="form-control" id="password" name="password">
+														<label for="password">密码:</label>
+														<input type="password" placeholder="password" class="form-control" id="password" name="password"/>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary" value="登录">
+														<input type="submit" class="btn btn-primary" value="登录"/>
 													</div>
 												</div>
 											</form>	
@@ -154,9 +158,7 @@
 	<!-- Main -->
 	<script src="/login/js/main.js"></script>
 	<!-- 前端校验 -->
-	<link rel="stylesheet" href="/bootstrap/validator/css/bootstrapValidator.css"/>
-	<script type="text/javascript" src="/bootstrap/validator/js/bootstrapValidator.js"></script>
-	<script type="text/javascript" src="/bootstrap/validate/js/language/zh_CN.js"></script>
+	<script type="text/javascript" src="/regist/validator.js"></script>
 	</body>
 </html>
 

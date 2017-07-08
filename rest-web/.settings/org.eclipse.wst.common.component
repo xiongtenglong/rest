@@ -9,6 +9,9 @@
         <dependent-module archiveName="rest-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/rest-common/rest-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="rest-dubbox-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/rest-dubbox/rest-dubbox">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="rest-web"/>
         <property name="java-output-path" value="/rest-web/target/classes"/>
     </wb-module>
