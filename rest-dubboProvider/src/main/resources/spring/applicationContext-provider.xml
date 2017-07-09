@@ -35,5 +35,7 @@
  	<!-- loadbalance：负载均衡策略，可选值：random,roundrobin,leastactive，分别表示：随机，轮循，最少活跃调用 -->
 	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseAreaService" ref="dubboxHouseAreaService" protocol="rest" timeout="10000"/>
 	<bean id="dubboxHouseAreaService" class="com.rest.dubboProvider.service.DubboxHouseAreaServiceImpl" />
+	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseInfoService" ref="dubboxHouseInfoService" protocol="rest" timeout="10000"/>
+	<bean id="dubboxHouseInfoService" class="com.rest.dubboProvider.service.DubboxHouseInfoServiceImpl" />
 	
 </beans>

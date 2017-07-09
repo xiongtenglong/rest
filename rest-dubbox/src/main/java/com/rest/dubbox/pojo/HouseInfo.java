@@ -24,8 +24,17 @@ public class HouseInfo extends BasePojo {
     private Integer status;
     private Integer statusAuth;
     private String evaluate;
+    private HouseStatus houseStatus;
 
-    public String getEvaluate() {
+    public HouseStatus getHouseStatus() {
+		return houseStatus;
+	}
+
+	public void setHouseStatus(HouseStatus houseStatus) {
+		this.houseStatus = houseStatus;
+	}
+
+	public String getEvaluate() {
         return evaluate;
     }
 

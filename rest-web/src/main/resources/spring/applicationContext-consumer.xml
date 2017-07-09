@@ -11,4 +11,5 @@
  	
  	<!-- 是否检查，如果true，当容器起来时，去zk中检查提供者必须正常。如果服务不在，退出。容器启动失败 -->
     <dubbo:reference check="false" id="dubboxHouseAreaService" interface="com.rest.dubbox.service.DubboxHouseAreaService" timeout="10000"/>
+    <dubbo:reference check="false" id="dubboxHouseInfoService" interface="com.rest.dubbox.service.DubboxHouseInfoService" timeout="10000"/>
 </beans>

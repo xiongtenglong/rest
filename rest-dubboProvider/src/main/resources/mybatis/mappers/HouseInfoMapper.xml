@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rest.dubboProvider.mapper.HouseInfoMapper">
+	<resultMap type="HouseInfo" id="houseInfoRM" autoMapping="true">
+		<id column="house_id" property="houseId"/>
+		<association property="houseStatus" javaType="HouseStatus" >
+			<id column="hid" property="houseId"/>
+			<result column="out_time" property="outTime"/>
+			<result column="out_status" property="outStatus"/>
+			<result column="new_price" property="newPrice"/>
+		</association>
+	</resultMap>
+	<select id="queryHouseListByTimeArea" resultMap="houseInfoRM">
+		SELECT * 
+		FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
+		LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
+		WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2;
+	</select>
+
+</mapper>

@@ -1,5 +1,7 @@
 package com.rest.web.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -7,21 +9,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rest.common.vo.SysResult;
+import com.rest.dubbox.service.DubboxHouseInfoService;
 import com.rest.web.pojo.HouseInfo;
 import com.rest.web.service.HouseInfoService;
 
-//@Controller
-//@RequestMapping("")
+@Controller
+@RequestMapping("/house")
 public class HouseInfoController {
 	@Autowired
 	private HouseInfoService houseInfoService;
+	@Autowired
+	private DubboxHouseInfoService dubboxHouseInfoService;
+	
+	@RequestMapping("/validHouse/{areaId}")
+	@ResponseBody
+	public SysResult queryHouseListByTimeArea(@PathVariable Integer areaId,Date startTime){
+		return dubboxHouseInfoService.queryHouseListByTimeArea(startTime, areaId);
+	}
 	
 	/**
 	 * 增加房源
 	 * @param houseInfo
 	 * @return
 	 */
-	@RequestMapping("")
+	//@RequestMapping("")
 	@ResponseBody
 	public SysResult add(HouseInfo houseInfo){
 		Long userId = 9L;
@@ -40,7 +51,7 @@ public class HouseInfoController {
 	 * @param houseInfo
 	 * @return
 	 */
-	@RequestMapping("")
+	//@RequestMapping("")
 	@ResponseBody
 	public SysResult findOne(@PathVariable Long houseId){
 		try {

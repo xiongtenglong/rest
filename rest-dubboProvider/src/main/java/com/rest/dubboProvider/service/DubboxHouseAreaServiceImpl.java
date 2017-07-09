@@ -15,9 +15,9 @@ public class DubboxHouseAreaServiceImpl extends BaseService<HouseArea> implement
 	@Autowired
 	private HouseAreaMapper houseAreaMapper;
 	@Override
-	public SysResult queryallCity() {
+	public SysResult queryallCity(Integer areaPid) {
 		HouseArea params=new HouseArea();
-		params.setAreaPid(0);
+		params.setAreaPid(areaPid);
 		params.setStatus(1);
 		List<HouseArea> list=super.queryListByWhere(params);
 		return SysResult.oK(list);

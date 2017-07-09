@@ -18,8 +18,9 @@ public class HouseAreaController {
 	private DubboxHouseAreaService dubboxHouseAreaService;
 	@RequestMapping("/allCity")
 	@ResponseBody
-	public List<HouseArea> queryAreaList(){
-		return (List<HouseArea>) dubboxHouseAreaService.queryallCity().getData();
+	public List<HouseArea> queryAreaList(Integer areaPid){
+		
+		return (List<HouseArea>) dubboxHouseAreaService.queryallCity(areaPid).getData();
 	}
 	
 }

@@ -1,6 +1,8 @@
 package com.rest.dubbox.service;
 
 
+import java.util.Date;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -14,10 +16,10 @@ import com.rest.common.vo.SysResult;
 @Path("house")
 @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 @Produces({ContentType.APPLICATION_JSON_UTF_8, ContentType.TEXT_XML_UTF_8})
-public interface DubboxHouseService {
+public interface DubboxHouseInfoService {
 
 	@Path("list")
 	@GET
-	public SysResult queryHouseListByTimeArea(@QueryParam("outTime")Integer outTime,
-											@QueryParam("area_name")String areaName);
+	public SysResult queryHouseListByTimeArea(@QueryParam("outTime")Date outTime,
+											@QueryParam("areaId")Integer areaId);
 }
