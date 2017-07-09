@@ -9,4 +9,7 @@ public class TimeUtils {
 	public static String toOutTime(Date date){
 		return sdf.format(date);
 	}
+	public static Integer parseInt(Date date){
+		return Integer.parseInt(toOutTime(date));
+	}
 }

@@ -37,5 +37,7 @@
 	<bean id="dubboxHouseAreaService" class="com.rest.dubboProvider.service.DubboxHouseAreaServiceImpl" />
 	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseInfoService" ref="dubboxHouseInfoService" protocol="rest" timeout="10000"/>
 	<bean id="dubboxHouseInfoService" class="com.rest.dubboProvider.service.DubboxHouseInfoServiceImpl" />
+	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseStatusService" ref="dubboxHouseStatusService" protocol="rest" timeout="10000"/>
+	<bean id="dubboxHouseStatusService" class="com.rest.dubboProvider.service.DubboxHouseStatusServiceImpl" />
 	
 </beans>

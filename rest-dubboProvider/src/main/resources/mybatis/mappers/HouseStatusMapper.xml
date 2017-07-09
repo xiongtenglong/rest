@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rest.dubboProvider.mapper.HouseStatusMapper">
+	<select id="queryOutTimeByHousId" resultType="int">
+		SELECT out_time FROM tb_house_status WHERE house_id=#{houseId} AND out_time>#{outTime} AND out_status=2;
+	</select>
+
+</mapper>

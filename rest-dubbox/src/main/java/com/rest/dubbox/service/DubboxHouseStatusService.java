@@ -1,7 +1,7 @@
 package com.rest.dubbox.service;
 
-
 import java.util.Date;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -13,20 +13,19 @@ import javax.ws.rs.core.MediaType;
 import com.alibaba.dubbo.rpc.protocol.rest.support.ContentType;
 import com.rest.common.vo.SysResult;
 
-@Path("house")
+@Path("houseStatus")
 @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 @Produces({ContentType.APPLICATION_JSON_UTF_8, ContentType.TEXT_XML_UTF_8})
-public interface DubboxHouseInfoService {
+public interface DubboxHouseStatusService {
 
 	/**
-	 * 根据出租时间和地区id查询有效房源信息
-	 * @param outTime 出租时间
-	 * @param areaId 读取id
+	 * 根据开始时间，房屋id查询房屋出租状态
+	 * @param houseId 房屋id
+	 * @param beginDate 开始时间
 	 * @return sysResult
 	 */
-	@Path("list")
+	@Path("unitDetail")
 	@GET
-	public SysResult queryHouseListByTimeArea(@QueryParam("outTime")Date outTime,
-											@QueryParam("areaId")Integer areaId);
-	
+	public List<List<List<Integer>>> getUnitDate(@QueryParam("houseId")Long houseId,
+								@QueryParam("beginDate")Date beginDate);
 }
