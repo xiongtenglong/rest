@@ -5,6 +5,8 @@ import com.rest.common.po.BasePojo;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/7/7.
@@ -19,12 +21,21 @@ public class HouseInfo extends BasePojo {
     private Long price;
     private String houseDesc;
     private String address;
-    private String imagePath;
     private String notice;
     private Integer status;
     private Integer statusAuth;
     private String evaluate;
     private Integer areaId;
+    @Transient
+    private List<HouseImage> imageList;
+
+    public List<HouseImage> getImageList() {
+        return imageList;
+    }
+
+    public void setImageList(List<HouseImage> imageList) {
+        this.imageList = imageList;
+    }
 
     public Integer getAreaId() {
         return areaId;
@@ -90,13 +101,7 @@ public class HouseInfo extends BasePojo {
         this.address = address;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
 
     public String getNotice() {
         return notice;
