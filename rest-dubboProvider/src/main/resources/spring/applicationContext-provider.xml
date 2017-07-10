@@ -13,7 +13,7 @@
 	<dubbo:application name="rest-dubboProvider" />
 
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
-	<dubbo:registry address="zookeeper://192.168.236.131:2181?backup=192.168.236.131:2182,192.168.236.131:2183" />
+	<dubbo:registry address="zookeeper://192.168.233.138:2181?backup=192.168.233.138:2182,192.168.233.138:2183" />
 
 	<!-- 用dubbo协议在20880端口暴露服务 -->
 	<!-- <dubbo:protocol name="dubbo" port="20880" /> -->
@@ -39,5 +39,7 @@
 	<bean id="dubboxHouseInfoService" class="com.rest.dubboProvider.service.DubboxHouseInfoServiceImpl" />
 	<dubbo:service interface="com.rest.dubbox.service.DubboxHouseStatusService" ref="dubboxHouseStatusService" protocol="rest" timeout="10000"/>
 	<bean id="dubboxHouseStatusService" class="com.rest.dubboProvider.service.DubboxHouseStatusServiceImpl" />
+	<dubbo:service interface="com.rest.dubbox.service.DubboxLAndRService" ref="dubboxLAndRService" protocol="rest" timeout="10000"/>
+	<bean id="dubboxLAndRService" class="com.rest.dubboProvider.service.DubboxLAndRServiceImpl" />
 	
 </beans>
