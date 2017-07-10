@@ -65,16 +65,11 @@
 					  <a href="#" class="top-weixin">
 						  手机端<div><img src="/index/images/index/ewm.jpg"></div>
 					  </a></li>
-				  <!-- 如果用户没有登陆, 就提示用户登陆或注册 -->
-				  <c:if test="${ empty session_user}">
-					  <li><a href="toLogin.action" class="scroll123">注册</a></li>
-					  <li><a href="toLogin.action" class="scroll123">登录</a></li>
-				  </c:if>
-				  <!-- 如果用户已经登陆了, 就提示欢迎xxx回来 -->
-				  <c:if test="${ !(empty session_user) }">
-					<%--  <li>欢迎, ${ session_user.username }回来</li>--%>
-					  <li><a href="logout.action" class="scroll123">退出</a></li>
-				  </c:if>
+				 
+				  	  <li id="registbar"><a href="/regist.html" class="scroll123">注册</a></li><!-- 注册 -->
+					  <li id="loginbar"><a href="/login.html" class="scroll123">登录</a></li><!-- 登录 -->
+				  
+				  
 			  </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -83,6 +78,8 @@
 
 	<!-- jQuery -->
 	<script src="/index/js/jquery.min.js"></script>
+	<!-- jQuery.cookie -->
+	<script src="/index/js/jquery.cookie.js"></script>
 	<!-- jQuery Easing -->
 	<script src="/index/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
@@ -91,6 +88,8 @@
 	<script src="/index/js/jquery.waypoints.min.js"></script>
 	<!-- Main -->
 	<script src="/index/js/main.js"></script>
+	<!-- 登录判断 --> 
+	<script src="/index/js/restlogin.js"></script>
 	</body>
 </html>
 

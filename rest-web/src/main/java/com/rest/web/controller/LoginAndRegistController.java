@@ -63,7 +63,7 @@ public class LoginAndRegistController {
 		//删除cookie
 		CookieUtils.deleteCookie(request, response, "REST_TICKET");
 		
-		return "index";
+		return "redirect:/home.html";
 	}
 	
 }
