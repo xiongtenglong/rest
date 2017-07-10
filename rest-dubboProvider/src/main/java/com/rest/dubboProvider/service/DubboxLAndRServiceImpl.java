@@ -10,14 +10,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.common.service.BaseService;
 import com.rest.common.service.RedisService;
+import com.rest.dubboProvider.mapper.UserInfoMapper;
 import com.rest.dubboProvider.mapper.UserMapper;
 import com.rest.dubbox.pojo.User;
+import com.rest.dubbox.pojo.UserInfo;
 import com.rest.dubbox.service.DubboxLAndRService;
 
 public class DubboxLAndRServiceImpl extends BaseService<User> implements DubboxLAndRService{
 	
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private UserInfoMapper userInfoMapper;
 	@Autowired
 	private RedisService redisService;
 	private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -32,8 +36,14 @@ public class DubboxLAndRServiceImpl extends BaseService<User> implements DubboxL
 		user.setUpdated(user.getCreated());
 		//因为页面上不填写，随便写的值，防止数据库唯一校验出错
 		user.setPassword(DigestUtils.md5Hex(password));
-		
 		userMapper.insertSelective(user);
+		
+		UserInfo userInfo = new UserInfo();
+		userInfo.setUserInfoId(user.getId());
+		userInfo.setCreated(user.getCreated());
+		userInfo.setUpdated(user.getUpdated());
+		
+		userInfoMapper.insertSelective(userInfo);
 		return username;
 		
 	}
