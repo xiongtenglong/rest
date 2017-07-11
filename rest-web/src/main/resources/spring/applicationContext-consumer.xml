@@ -7,7 +7,7 @@
 
     <dubbo:application name="reat-web"/>
 
-    <dubbo:registry address="zookeeper://192.168.233.138:2181?backup=192.168.233.138:2182,192.168.233.138:2183" />
+    <dubbo:registry address="zookeeper://106.14.169.24:2181?backup=106.14.169.24:2182,106.14.169.24:2183" />
  	
  	<!-- 是否检查，如果true，当容器起来时，去zk中检查提供者必须正常。如果服务不在，退出。容器启动失败 -->
     <dubbo:reference check="false" id="dubboxHouseAreaService" interface="com.rest.dubbox.service.DubboxHouseAreaService" timeout="10000"/>
