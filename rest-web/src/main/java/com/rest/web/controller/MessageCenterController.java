@@ -19,7 +19,7 @@ public class MessageCenterController {
 	 * 转向个人中心
 	 * @return
 	 */
-	@RequestMapping("center")
+	@RequestMapping("mycenter")
 	public String toMessageCenter() {
 		return "messageCenter";
 	}

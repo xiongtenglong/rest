@@ -3,6 +3,7 @@ package com.rest.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +52,7 @@ public class LoginAndRegistController {
 	@RequestMapping("/doLogin")
 	public String doLogin(String username,String password,Model model, HttpServletRequest request,HttpServletResponse response){
 		String ticket = userService.saveLogin(username, password);
-		if(ticket == null){
+		if(StringUtils.isEmpty(ticket)){
 			model.addAttribute("msg", "用户名或密码错误");
 			return "forward:/login.html";
 			
