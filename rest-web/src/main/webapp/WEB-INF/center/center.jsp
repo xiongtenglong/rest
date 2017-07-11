@@ -34,7 +34,7 @@
             <div class="tpl-content-page-title">
                 个人资料
             </div>
-            <ol class="am-breadcrumb">
+           <%--  <ol class="am-breadcrumb">
                 <li>
                     <form action="userInfo.action" class="am-icon-home" method="post">
                         <input type="text" value=${user.userId} name="userId" hidden="hidden"/>
@@ -42,7 +42,7 @@
                     </form>
                 </li>
 
-            </ol>
+            </ol> --%>
 
             <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
@@ -59,26 +59,33 @@
                                 <td style="align-content: center">${user.username}</td>
                             </tr>
                             <tr>
-                                <td style=" align-content: center">密码:</td>
+                                <td style=" align-content: center">性别:</td>
+                                <td style="align-content: center">${user.userInfo.age}</td>
+                            </tr>
+                            <tr>
+                                <td style=" align-content: center">身份证号:</td>
                                 <td style=" align-content: center">${user.password}</td>
                             </tr>
                             <tr>
-                                <td style=" align-content: center">性别:</td>
+                                <td style=" align-content: center">认证状态:</td>
                                 <td style=" align-content: center">${user.userInfo.sex}</td>
 
                             </tr>
-                            <tr>
-                                <td style=" align-content: center">年龄:</td>
+		                    <tr>
+                                <td style=" align-content: center">邮件:</td>
                                 <td style="align-content: center">${user.userInfo.age}</td>
                             </tr>
-
+                            <tr>
+                                <td style=" align-content: center">用户级别:</td>
+                                <td style="align-content: center">${user.userInfo.age}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
 
             </div>
 
-            <div class="row">
+           <%--  <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
                     <div class="tpl-portlet">
                         <div class="tpl-portlet-title">
@@ -112,7 +119,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --%>
 
 <%-- <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">

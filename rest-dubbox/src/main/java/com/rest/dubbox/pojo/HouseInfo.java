@@ -23,7 +23,7 @@ public class HouseInfo extends BasePojo {
     private String notice;
     private Integer status;
     private Integer statusAuth;
-    private String evaluate;
+    private Integer evaluate;
     private HouseStatus houseStatus;
 
     public HouseStatus getHouseStatus() {
@@ -34,11 +34,11 @@ public class HouseInfo extends BasePojo {
 		this.houseStatus = houseStatus;
 	}
 
-	public String getEvaluate() {
+	public Integer getEvaluate() {
         return evaluate;
     }
 
-    public void setEvaluate(String evaluate) {
+    public void setEvaluate(Integer evaluate) {
         this.evaluate = evaluate;
     }
 
