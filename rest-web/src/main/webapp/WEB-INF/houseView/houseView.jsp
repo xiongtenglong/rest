@@ -48,50 +48,7 @@
 <div class="fh5co-loader"></div>
 
 <div id="page">
-    <nav id="tf-menu" >
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div id="fh5co-logo"><a href="home.action">Air<span>.</span></a></div>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.action" class="scroll123">主页</a></li>
-                    <li><a href="center.action" class="scroll123">个人中心</a></li>
-                    <li><a href="houseAll.action" class="scroll123">房源</a></li>
-                    <li><a href="story.action" class="scroll123">故事</a></li>
-
-                    <li class="top">
-                        <a href="#" class="top-weixin">
-                            手机端<div><img src="/index/images/index/ewm.jpg"></div>
-                        </a></li>
-
-                    <!-- 如果用户没有登陆, 就提示用户登陆或注册 -->
-                    <c:if test="${ empty session_user}">
-                        <li><a href="toLogin.action" class="scroll123">注册</a></li>
-                        <li><a href="toLogin.action" class="scroll123">登录</a></li>
-                    </c:if>
-
-                    <!-- 如果用户已经登陆了, 就提示欢迎xxx回来 -->
-                    <c:if test="${ !(empty session_user) }">
-                        <%--  <li>欢迎, ${ session_user.username }回来</li>--%>
-
-                        <li><a href="logout.action" class="scroll123">退出</a></li>
-                    </c:if>
-
-                </ul>
-
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+    <%@include file="/WEB-INF/index/_head.jsp" %>
     <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(/index/images/img_bg_1.jpg);">
         <div class="overlay"></div>
         <div class="container">
@@ -213,7 +170,7 @@
     <script src="/houseView/js/jquery.waypoints.min.js"></script>
     <!-- Main -->
     <script src="/houseView/js/main.js"></script>
-
+<%@include file="/WEB-INF/index/_foot.jsp" %>
 </body>
 </html>
 
