@@ -1,6 +1,5 @@
 package com.rest.dubboProvider.service;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +33,30 @@ public class DubboxHouseInfoServiceImpl extends BaseService<HouseInfo> implement
 			}
 		}
 		return SysResult.oK(data);
+	}
+
+	@Override
+	public List<HouseInfo> queryHouseOrderBy(String condition, String fieldN, Date outTime, Integer areaId) {
+		List<HouseInfo> data=houseInfoMapper.queryHouseOrder(condition,fieldN,TimeUtils.parseInt(outTime),areaId);
+		for (HouseInfo houseInfo : data) {
+			HouseStatus houseStatus = houseInfo.getHouseStatus();
+			if(houseStatus!=null&&houseStatus.getNewPrice()!=null){
+				houseInfo.setPrice(houseStatus.getNewPrice());
+			}
+		}
+		return data;
+	}
+
+	@Override
+	public List<HouseInfo> queryHotHouseInfoTopTen(Date outTime, Integer areaId) {
+		List<HouseInfo> data=houseInfoMapper.queryHotHouseInfoTopTen(TimeUtils.parseInt(outTime),areaId);
+		for (HouseInfo houseInfo : data) {
+			HouseStatus houseStatus = houseInfo.getHouseStatus();
+			if(houseStatus!=null&&houseStatus.getNewPrice()!=null){
+				houseInfo.setPrice(houseStatus.getNewPrice());
+			}
+		}
+		return data;
 	}
 
 }

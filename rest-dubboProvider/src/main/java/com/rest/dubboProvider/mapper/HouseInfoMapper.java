@@ -11,4 +11,12 @@ public interface HouseInfoMapper extends SysMapper<HouseInfo>{
 
 	public List<HouseInfo> queryHouseListByTimeArea(@Param("outTime") Integer outTime, @Param("areaId") Integer areaId);
 
+	public List<HouseInfo> queryHouseOrder(@Param("condition") String condition,
+										@Param("fieldN") String fieldN, 
+										@Param("outTime")Integer outTime, 
+										@Param("areaId") Integer areaId);
+
+	
+	public List<HouseInfo> queryHotHouseInfoTopTen(@Param("outTime") Integer outTime, @Param("areaId") Integer areaId);
+
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.common.service.HttpClientService;
-import com.rest.web.pojo.HouseInfo;
+import com.rest.dubbox.pojo.HouseInfo;
 
 @Service
 public class HouseInfoService {
@@ -23,7 +23,7 @@ public class HouseInfoService {
 		Map<String,String> param = new HashMap<String, String>();
 		param.put("userId", houseInfo.getUserId()+"");
 		param.put("title", houseInfo.getTitle());
-		param.put("prive", houseInfo.getPrive()+"");
+		param.put("price", houseInfo.getPrice()+"");
 		param.put("houseDesc", houseInfo.getHouseDesc());
 		param.put("imagePath", houseInfo.getImagePath());
 		param.put("address", houseInfo.getAddress());
