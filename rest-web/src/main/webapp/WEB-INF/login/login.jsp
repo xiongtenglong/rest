@@ -74,7 +74,7 @@
 											<form action="/service/doRegist" method="POST" id="registform">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="usernameId" class="isnull" style="font-size: 8px;"></span></label>
+														<label for="username">用户名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="usernameId" class="isnull" style="font-size: 8px;"></span><span>${msg }</span></label>
 														<input type="text" placeholder="请输入用户名" class="form-control" id="username" name="username" 
 															value="${param.username }" >
 													</div>
