@@ -1,12 +1,11 @@
 package com.rest.dubbox.pojo;
 
-import java.util.Date;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rest.common.po.BasePojo;
 
 @Table(name="tb_user")
@@ -16,6 +15,7 @@ public class User extends BasePojo{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String username;
+	@JsonIgnore
 	private String password;
 	private String phone;
 	public Long getId() {

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rest.manage.mapper.UserMapper">
+
+    <!--根据用户id查找模块列表-->
+    <select id="findModuleListByUserId" resultType="string">
+        select name from tb_module where module_id in
+        (select module_id from tb_role_module where role_id=
+        (select role_id from tb_user_role where id=#{id} )
+        )
+
+    </select>
+
+
+    <select id="findUserByUsername" resultMap="userRM">
+        SELECT * from tb_user where username=#{username}
+    </select>
+
+    <!--查找用户列表-->
+    <select id="queryUserList" resultMap="userRM" >
+        SELECT u.id, u.username,u.password,u.phone,i.name,i.card_no,i.status,i.gender,i.email,i.card_path,i.grade,i.created,i.updated  from
+        tb_user u
+        LEFT JOIN
+        tb_user_info i
+        ON u.id=i.user_info_id
+    </select>
+
+    <resultMap type="User" id="userRM" autoMapping="true">
+        <!-- 主对象完成封装，其余自动封装 -->
+        <id column="id" property="id"/>
+
+        <!--完成用户信息封装  -->
+        <association property="userInfo" javaType="UserInfo">
+            <id column="user_info_id" property="userInfoId"/>
+            <result column="name" property="name"/>
+            <result column="card_no" property="cardNo"/>
+            <result column="status" property="status"/>
+            <result column="gender" property="gender"/>
+            <result column="email" property="email"/>
+            <result column="card_path" property="cardPath"/>
+            <result column="grade" property="grade"/>
+            <result column="created" property="created"/>
+            <result column="updated" property="updated"/>
+
+        </association>
+
+    </resultMap>
+
+    <select id="findUserInfo" resultType="UserInfo" >
+        SELECT * from tb_user_info
+    </select>
+
+    <!--修改状态-->
+    <update id="updateStatus" >
+        update tb_user_info SET status=#{status},updated=now() where user_info_id IN (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </update>
+
+	
+</mapper>

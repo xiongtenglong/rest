@@ -33,30 +33,30 @@ public class UserController {
 		}
 	}
 	
-	//http://sso.jt.com/user/register
-	@RequestMapping("/regist")
-	@ResponseBody
-	public SysResult register(User user){
-		try{
-			String username = userService.saveRegister(user);
-			return SysResult.oK(username);
-		}catch(Exception e){
-			return SysResult.build(201, "注册失败!", user.getUsername());
-		}
-	}
-	
-	//http://sso.jt.com/user/login
-	@RequestMapping("/login")
-	@ResponseBody
-	public SysResult login(String u, String p){
-		try{
-			String ticket = userService.saveLogin(u, p);
-			return SysResult.oK(ticket);
-		}catch(Exception e){
-			return SysResult.build(201, "用户登录失败!");
-		}
-	}
-	
+//	//http://sso.jt.com/user/register
+//	@RequestMapping("/regist")
+//	@ResponseBody
+//	public SysResult register(User user){
+//		try{
+//			String username = userService.saveRegister(user);
+//			return SysResult.oK(username);
+//		}catch(Exception e){
+//			return SysResult.build(201, "注册失败!", user.getUsername());
+//		}
+//	}
+//	
+//	//http://sso.jt.com/user/login
+//	@RequestMapping("/login")
+//	@ResponseBody
+//	public SysResult login(String u, String p){
+//		try{
+//			String ticket = userService.saveLogin(u, p);
+//			return SysResult.oK(ticket);
+//		}catch(Exception e){
+//			return SysResult.build(201, "用户登录失败!");
+//		}
+//	}
+//	
 	//http://sso.jt.com/user/query/{ticket}
 	@RequestMapping("/query/{ticket}")
 	@ResponseBody

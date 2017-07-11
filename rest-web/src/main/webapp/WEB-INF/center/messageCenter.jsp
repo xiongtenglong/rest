@@ -39,7 +39,7 @@
                     <a href="messageCenter.action" class="nav-link active">
                         <i class="am-icon-bar-chart"></i>
                         <span>消息中心</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">12</i>
+                        <i class="tpl-left-nav-content tpl-badge-danger">0</i>
                     </a>
                 </li>
 
@@ -60,7 +60,7 @@
                 <li class="tpl-left-nav-item">
                     <a href="storyMessage.action" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-wpforms"></i>
-                        <span>旅途故事</span>
+                        <span>修改密码</span>
                     </a>
                 </li>
             </ul>

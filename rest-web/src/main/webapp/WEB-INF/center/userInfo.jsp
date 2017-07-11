@@ -50,24 +50,24 @@
                                     <input type="text" name="username" value="${session_user.username}"/>
                                 </td>
                             </tr>
-                            <tr>
+                            <%-- <tr>
                                 <td style=" align-content: center">密码:</td>
                                 <td style="align-content: center">
                                     <input type="password" name="password" value="${session_user.password}"/>
                                 </td>
-                            </tr>
+                            </tr> --%>
                             <tr>
                                 <td style=" align-content: center">性别:</td>
                                 <td style="align-content: center">
                                     <input type="text" name="userInfo.sex" value="${session_user.userInfo.sex}"/>
                                 </td>
                             </tr>
-                            <tr>
+                            <%-- <tr>
                                 <td style=" align-content: center">年龄:</td>
                                 <td style="align-content: center">
                                     <input type="text" name="userInfo.age" value="${session_user.userInfo.age}"/>
                                 </td>
-                            </tr>
+                            </tr> --%>
 
                         </table>
                     </div>
