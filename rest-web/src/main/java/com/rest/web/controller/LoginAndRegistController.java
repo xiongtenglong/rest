@@ -51,6 +51,9 @@ public class LoginAndRegistController {
 	@RequestMapping("/doLogin")
 	public String doLogin(String username,String password,HttpServletRequest request,HttpServletResponse response){
 		String ticket = userService.saveLogin(username, password);
+		if(ticket == null){
+			return "redirect:/login.html";
+		}
 		String cookieName = "REST_TICKET";
 		//将ticket放在本地的浏览器的cookie中，作为唯一标识，可以同可ticket从redis获取用户信息
 		CookieUtils.setCookie(request, response, cookieName, ticket, 60*60*24*7);
