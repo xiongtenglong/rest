@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>个人信息</title>
-    <meta name="description" content="这是一个 center 页面">
+    <title>修改密码</title>
+    <meta name="description" content="这是一个 center页面">
     <meta name="keywords" content="center">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -22,105 +22,52 @@
 </head>
 
 <body data-type="index" style="margin:0 200px">
-<%@include file="/WEB-INF/center/center_head.jsp" %>
 
+<%@include file="/WEB-INF/index/_head.jsp" %>
 
-    <div class="tpl-page-container tpl-page-header-fixed">
-
-
-
+    <form method="post" action="/saveUser">
 
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                个人资料
+                密码修改
             </div>
-           <%--  <ol class="am-breadcrumb">
-                <li>
-                    <form action="userInfo.action" class="am-icon-home" method="post">
-                        <input type="text" value=${user.userId} name="userId" hidden="hidden"/>
-                        <button type="submit" class="btn btn-default">补全信息</button>
-                    </form>
-                </li>
-
-            </ol> --%>
-
+            <div class="tpl-content-page-title">
+                ${errorInfo}
+            </div>
             <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
                     <div class="tpl-portlet">
                         <div class="tpl-portlet-title">
                             <div class="tpl-caption font-green ">
                                 <i class="am-icon-cloud-download"></i>
-                                <span>基本信息:</span>
+                                <span>用户信息:</span>
                             </div>
                         </div>
                         <table style="color: #8f0222">
                             <tr>
                                 <td style=" align-content: center">用户名:</td>
-                                <td style="align-content: center">${user.username}</td>
+                                <td style="align-content: center">
+                                    <input type="text" name="username" value="${session_user.username}"/>
+                                </td>
                             </tr>
                             <tr>
-                                <td style=" align-content: center">性别:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
+                                <td style=" align-content: center">密码:</td>
+                                <td style="align-content: center">
+                                    <input type="password" name="password" value="${session_user.password}"/>
+                                </td>
                             </tr>
-                            <tr>
-                                <td style=" align-content: center">身份证号:</td>
-                                <td style=" align-content: center">${user.password}</td>
-                            </tr>
-                            <tr>
-                                <td style=" align-content: center">认证状态:</td>
-                                <td style=" align-content: center">${user.userInfo.sex}</td>
-
-                            </tr>
-		                    <tr>
-                                <td style=" align-content: center">邮件:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
-                            </tr>
-                            <tr>
-                                <td style=" align-content: center">用户级别:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
+                              <tr>
+                                <td rowspan="2" align="center" >
+                                    <input type="submit" value="保存"/>
+                                </td>
                             </tr>
                         </table>
                     </div>
                 </div>
-
-            </div>
-
-           <%--  <div class="row">
-                <div class="am-u-md-6 am-u-sm-12 row-mb">
-                    <div class="tpl-portlet">
-                        <div class="tpl-portlet-title">
-                            <div class="tpl-caption font-green ">
-                                <i class="am-icon-cloud-download"></i>
-                                <span>详细信息:</span>
-                            </div>
-                        </div>
-                        <table>
-                            <tr>
-                                <td style="color: #00b3ee; align-content: center">真实姓名:</td>
-                                <td style="color: #00b3ee; align-content: center">${user.userInfo.name}</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #00b3ee; align-content: center">身份证号:</td>
-                                <td style="color: #00b3ee; align-content: center">${user.userInfo.card}</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #00b3ee; align-content: center">电话:</td>
-                                <td style="color: #00b3ee; align-content: center">${user.userInfo.phone}</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #00b3ee; align-content: center">邮箱:</td>
-                                <td style="color: #00b3ee; align-content: center">${user.userInfo.mail}</td>
-                            </tr>
-
-                        </table>
-                    </div>
-                </div>
-
             </div>
         </div>
 
-    </div> --%>
-
+    </form>
 <%-- <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
                     <div class="tpl-portlet">

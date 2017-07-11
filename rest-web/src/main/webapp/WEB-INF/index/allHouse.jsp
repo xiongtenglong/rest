@@ -27,21 +27,57 @@
 	<div id="fh5co-project">
 		<div class="container">
 			<div class="row">
-				<c:forEach items="${houseList}" var="h">
-					<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
-						<a href="view.action?houseId=${h.houseId}"><img src="${h.img1}" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-							<h3>${h.city}</h3>
-							<span>${h.type}</span>
-						</a>
-					</div>
-				</c:forEach>
-
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/xihu.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>西湖区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/yuhang.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>余杭区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/gongsu.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>拱墅区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/shangcheng.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>上城区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/xiacheng.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>下城区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/bingjiang.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>滨江区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/xiaoshan.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>萧山区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href="网址"><img src="/WEB-INF/index/images/area/jianggan.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<h3>余杭区</h3>
+						<%-- <span>${h.type}</span> --%>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-
 
 		<%@include file="/WEB-INF/index/_foot.jsp" %>
 	</div>
