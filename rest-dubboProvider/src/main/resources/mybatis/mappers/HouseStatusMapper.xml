@@ -6,5 +6,11 @@
 	<select id="queryOutTimeByHousId" resultType="int">
 		SELECT out_time FROM tb_house_status WHERE house_id=#{houseId} AND out_time>#{outTime} AND out_status=2;
 	</select>
+	<select id="selectStatusByhouseIdAndOutTime" resultType="HouseStatus">
+		SELECT * FROM tb_house_status WHERE house_id=#{houseId} AND out_time=#{outTime}
+	</select>
+	<update id="updateHouseStatusByHouseidAndOutTime">
+		UPDATE tb_house_status SET out_status=#{outStatus} WHERE house_id=#{houseId} AND out_time=#{outTime}
+	</update>
 
 </mapper>

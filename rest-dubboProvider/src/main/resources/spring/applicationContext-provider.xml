@@ -41,5 +41,7 @@
 	<bean id="dubboxHouseStatusService" class="com.rest.dubboProvider.service.DubboxHouseStatusServiceImpl" />
 	<dubbo:service interface="com.rest.dubbox.service.DubboxLAndRService" ref="dubboxLAndRService" protocol="rest" timeout="10000"/>
 	<bean id="dubboxLAndRService" class="com.rest.dubboProvider.service.DubboxLAndRServiceImpl" />
+	<dubbo:service interface="com.rest.dubbox.service.DubboxOrderService" ref="dubboxOrderService" protocol="rest" timeout="10000"/>
+	<bean id="dubboxOrderService" class="com.rest.dubboProvider.service.DubboxOrderServiceImpl" />
 	
 </beans>

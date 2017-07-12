@@ -12,8 +12,9 @@ public class Order extends BasePojo{
 
 	@Id
 	private String orderId;
+	private Long userId;
+	private Long houseId;
 	private String payment;
-	private String paymentNo;
 	private Integer status;
 	private Date startTime;//出租开始时间
 	private Date endTime;//出租结束时间
@@ -32,11 +33,17 @@ public class Order extends BasePojo{
 	public void setPayment(String payment) {
 		this.payment = payment;
 	}
-	public String getPaymentNo() {
-		return paymentNo;
+	public Long getUserId() {
+		return userId;
 	}
-	public void setPaymentNo(String paymentNo) {
-		this.paymentNo = paymentNo;
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public Long getHouseId() {
+		return houseId;
+	}
+	public void setHouseId(Long houseId) {
+		this.houseId = houseId;
 	}
 	public Integer getStatus() {
 		return status;
