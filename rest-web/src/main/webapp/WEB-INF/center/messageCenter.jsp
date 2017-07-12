@@ -107,11 +107,6 @@
                 </div>
             </div>
 
-
-
-
-
-
         </div>
 
     </div>
@@ -121,6 +116,10 @@
     <script src="/center/assets/js/amazeui.min.js"></script>
     <script src="/center/assets/js/iscroll.js"></script>
     <script src="/center/assets/js/app.js"></script>
+    <script src="/index/js/jquery.cookie.js"></script>
+    <!-- 登录判断 -->
+    <script src="/index/js/restlogin.js"></script>
+
 </body>
 
 </html>
