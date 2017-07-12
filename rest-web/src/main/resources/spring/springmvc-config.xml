@@ -41,4 +41,11 @@
 	</bean>
 	<!-- 处理静态资源被“/”所拦截的问题 -->
 	<mvc:default-servlet-handler />
+	<mvc:interceptors>
+		<mvc:interceptor >
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.rest.web.interceptor.OrderInterceptor"/>
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
 </beans>

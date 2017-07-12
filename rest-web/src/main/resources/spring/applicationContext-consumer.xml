@@ -14,4 +14,5 @@
     <dubbo:reference check="false" id="dubboxHouseInfoService" interface="com.rest.dubbox.service.DubboxHouseInfoService" timeout="10000"/>
     <dubbo:reference check="false" id="dubboxHouseStatusService" interface="com.rest.dubbox.service.DubboxHouseStatusService" timeout="10000"/>
     <dubbo:reference check="false" id="dubboxLAndRService" interface="com.rest.dubbox.service.DubboxLAndRService" timeout="10000"/>
+    <dubbo:reference check="false" id="dubboxOrderService" interface="com.rest.dubbox.service.DubboxOrderService" timeout="10000"/>
 </beans>

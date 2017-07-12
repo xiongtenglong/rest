@@ -54,4 +54,13 @@ public interface DubboxHouseInfoService {
 	@GET
 	public List<HouseInfo> queryHotHouseInfoTopTen(@QueryParam("outTime")Date outTime,
 											@QueryParam("areaId")Integer areaId);
+
+	/**
+	 * 根据房子id查询房子信息
+	 * @param houseId
+	 * @return
+	 */
+	@Path("findOne")
+	@GET
+	public HouseInfo queryOneByHouseId(@QueryParam("houseId")Long houseId);
 }
