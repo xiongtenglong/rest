@@ -34,6 +34,6 @@ public class SearchController {
         List<HouseInfo> itemList = searchService.queryItemList(q, page, rows);
         model.addAttribute("itemList", itemList);
         model.addAttribute("query", q);
-        return "search";
+        return "home/homelist";
     }
 }
