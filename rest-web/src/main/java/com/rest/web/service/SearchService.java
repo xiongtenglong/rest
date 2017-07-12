@@ -27,7 +27,12 @@ public class SearchService {
 		Integer startPos = (Math.max(page, 1)-1) * rows;
 
 		SolrQuery query = new SolrQuery();
-		query.setQuery("title:" + q);
+		if (!"".equals(q)){
+			query.setQuery("title:" + q);
+		}else {
+			query.setQuery("title:杭州" );
+		}
+
 		query.setStart(startPos);
 		query.setRows(rows);
 
