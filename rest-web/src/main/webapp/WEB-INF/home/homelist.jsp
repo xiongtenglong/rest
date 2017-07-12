@@ -2,6 +2,21 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="../../laydate/laydate.js"></script>
 <script type="text/javascript" src="../../show/js/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="/index/js/jquery.min.js"></script>
+<!-- jQuery.cookie -->
+<script src="/index/js/jquery.cookie.js"></script>
+<!-- jQuery Easing -->
+<script src="/index/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/index/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/index/js/jquery.waypoints.min.js"></script>
+<!-- Main -->
+<script src="/index/js/main.js"></script>
+<!-- 登录判断 -->
+<script src="/index/js/restlogin.js"></script>
+
 <script>
 
 $().ready(function () {
@@ -31,21 +46,11 @@ $().ready(function () {
         <div class="site-logo-cont">
             <a href="https://www.tujia.com/" target="_blank" title="途家网首页" class="site-logo">途家网</a> <span class="logo-text">旅途中的家</span>
         </div>
-        <div class="nav-list">
-            <ul>
-                <li class="first"><a href="https://www.tujia.com/" class="home-link " target="_blank">首页</a></li>
-
-                <li><a href="https://www.tujia.com/villa/" target="_blank">别墅</a></li>
-                <li><a href="https://international.tujia.com/" target="_blank">海外公寓</a></li>
-
-                <li><a href="https://www.tujia.com/photowall/" target="_blank">特色民宿</a></li>
-                <li><a href="https://travel.tujia.com/" target="_blank">发现</a></li>
-                <li><a href="https://www.tujia.com/Experience/" target="_blank">体验房</a></li>
-            </ul>
-        </div>
-
         <div class="sub-link" lazyloadurl="https://vip.tujia.com/WebParts/Portal/UserInfo?isShowCreateNewStore=False">
-            <a href="https://passport.tujia.com/PortalSite/Register/" rel="nofollow" class="link-btn">注册</a> <a href="https://passport.tujia.com/PortalSite/LoginPage/" rel="nofollow">登录</a> <a href="https://merchantcrm.tujia.com/merchant-web/StoreApply/" target="_blank" rel="nofollow" class="t-link-btn">免费发布房屋</a>
+            <a href="/home.html" rel="nofollow" class="link-btn">首页</a>
+            <a id="registbar" href="/regist.html" rel="nofollow" class="link-btn">注册</a>
+            <a id="loginbar" href="/login.html" rel="nofollow">登录</a>
+            <a href="https://merchantcrm.tujia.com/merchant-web/StoreApply/" target="_blank" rel="nofollow" class="t-link-btn">免费发布房屋</a>
             <div id="mytujia" class="dn tl" style="display: none">
                 <div class="mytujiaWrapper" id="userMessage">
                     <div class="p20">
@@ -64,16 +69,16 @@ $().ready(function () {
             <div class="tab-content">
 
                 <form id="mainSearchForm"
-                      action="https://www.tujia.com/hangzhou_gongyu/"
+                      action="http://localhost:9002/house/validHouse.html"
                       class="mainSearchForm mainSearchForm_unitlist" target="_top"
                       method="post">
                     <div class="control-group  city-group">
                         <span class="controls-span">目的地</span>
                         <div class="controls">
-                            <select name="areaId" style="display: block;width:184px;height:32px;text-align-all: center">
-                                <option value="101">上城</option>
-                                <option value="102">下城</option>
-                                <option value="103">西湖</option>
+                            <select name="areaId"  style="display: block;width:184px;height:32px;text-align-all: center">
+                                <option  value="101">上城</option>
+                                <option  value="102">下城</option>
+                                <option  value="103">西湖</option>
                                 <option value="104">江干</option>
                                 <option value="105">拱墅</option>
                                 <option value="106">滨江</option>
@@ -121,9 +126,9 @@ $().ready(function () {
                         </div>
                     </div>
                     <div class="control-group search-btn-group" id="submitBox">
-                        <input type="button" value="搜索" class="search-btn"
+                        <input type="submit" value="搜索" class="search-btn"
                                id="searchHouse"
-                               onclick="_gaq.push(['_trackEvent', 'pcList', '列表搜索按钮']);">
+                               >
                     </div>
 
                 </form>

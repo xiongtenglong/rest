@@ -1,11 +1,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="../../laydate/laydate.js"></script>
+<!-- jQuery -->
+<script src="/index/js/jquery.min.js"></script>
+<!-- jQuery.cookie -->
+<script src="/index/js/jquery.cookie.js"></script>
+<!-- jQuery Easing -->
+<script src="/index/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/index/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/index/js/jquery.waypoints.min.js"></script>
+<!-- Main -->
+<script src="/index/js/main.js"></script>
+<!-- 登录判断 -->
+<script src="/index/js/restlogin.js"></script>
 <html>
 <head>
     <title>【图】杭州斯维登天鸿美和院豪华大床房_富阳市短租公寓_途家网</title>
     <link rel="stylesheet" type="text/css" href="../../home/css_detail">
 </head>
 <body id="'tujia'">
+<div class="hd-wrap-fluid ">
+    <div class="m-hd">
+        <div class="site-logo-cont">
+            <a href="https://www.tujia.com/" target="_blank" title="途家网首页" class="site-logo">途家网</a> <span class="logo-text">旅途中的家</span>
+        </div>
+        <div class="sub-link" lazyloadurl="https://vip.tujia.com/WebParts/Portal/UserInfo?isShowCreateNewStore=False">
+            <a href="/home.html" rel="nofollow" class="link-btn">首页</a>
+            <a id="registbar" href="/regist.html" rel="nofollow" class="link-btn">注册</a>
+            <a id="loginbar" href="/login.html" rel="nofollow">登录</a>
+            <a href="https://merchantcrm.tujia.com/merchant-web/StoreApply/" target="_blank" rel="nofollow" class="t-link-btn">免费发布房屋</a>
+            <div id="mytujia" class="dn tl" style="display: none">
+                <div class="mytujiaWrapper" id="userMessage">
+                    <div class="p20">
+                        <img src="https://staticfile.tujia.com/Common/images/loader.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="hd-wrap-fluid ">
     <div class="m-hd">
         <div class="site-logo-cont">
@@ -81,6 +116,7 @@
 </div>
 <input type="hidden" id="NeedProductPriceFilter" value="true">
 
+<input type="hidden" value="${houseInfo.houseId}" name="houseId">
 <!-- 入住到退房时间 -->
 <div class="m-cont t-cont clearfix">
     <div id="unitmaincontainer" class="main-cont ">
@@ -92,10 +128,8 @@
                         <span class="controls-span">入住</span>
                         <div class="controls">
                             <input type="hidden" id="UnitId" value="51919">
-                            <input type="hidden" id="ProductId" value="0">
-                            <input type="hidden" id="UnitDetailSubType" value="0">
                             <label for="unitDetailStartDate">
-                                <input type="text" name="" id="unitDetailStartDate" value="2017-07-10" class="date-ipt-text date" autocomplete="off" spellcheck="false" dir="ltr"><i class="icon-date"></i>
+                                <input type="text" name="" id="unitDetailStartDate" class="date-ipt-text date laydate-icon" autocomplete="off" spellcheck="false" dir="ltr" onclick="laydate()"><i class="icon-date"></i>
                             </label>
                         </div>
                     </div>
@@ -104,7 +138,7 @@
                         <span class="controls-span">退房</span>
                         <div class="controls">
                             <label for="unitDetailEndDate">
-                                <input type="text" name="" id="unitDetailEndDate" value="2017-07-11" class="date-ipt-text date" autocomplete="off" spellcheck="false" dir="ltr"><i class="icon-date t-icon-date"></i>
+                                <input type="text" name="" id="unitDetailEndDate"  class="date-ipt-text date laydate-icon" autocomplete="off" spellcheck="false" dir="ltr" onclick="laydate()"><i class="icon-date t-icon-date"></i>
                             </label>
                         </div>
                     </div>
@@ -164,9 +198,8 @@
                         <td class="item-07">
                             <span class="addapp" rel="j-addapp-vima" id="showErweima">APP预订 更省钱</span>
                         </td>
-
                         <td class="item-last">
-                            <a href="https://booking.tujia.com/order/info?unitid=51919&amp;startDate=2017-07-10&amp;endDate=2017-07-11&amp;productId=244583&amp;bookingCount=1&amp;unitType=Sweetome#prevId=a39bc37a-9d72-4a81-ae80-2832cd53989b" target="_blank" class="btn-buy jq-productdetail-buy" rel="nofollow" onclick="_gaq.push(['_trackEvent', 'pcDetail', '立即预订']);">立即预订</a>
+                            <a href="http://localhost:9002/order/page.html?houseId=${houseInfo.houseId}" target="_blank" class="btn-buy jq-productdetail-buy" rel="nofollow" >立即预订</a>
                         </td>
                     </tr>
                     </tbody>
