@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rest-common" />
+        <module name="rest-dubboProvider" />
+        <module name="rest-dubbox" />
+        <module name="rest-manage" />
+        <module name="rest-sso" />
+        <module name="rest-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="rest-common" target="1.5" />
+      <module name="rest-dubboProvider" target="1.6" />
+      <module name="rest-dubbox" target="1.5" />
+      <module name="rest-manage" target="1.5" />
+      <module name="rest-parent" target="1.5" />
+      <module name="rest-sso" target="1.5" />
+      <module name="rest-web" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

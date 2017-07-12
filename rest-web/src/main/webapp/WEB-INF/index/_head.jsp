@@ -1,25 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Orange &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
@@ -39,8 +21,7 @@
 	<!--[if lt IE 9]>
 	<script src="/index/js/respond.min.js"></script>
 	<![endif]-->
-	</head>
-	<body>
+
 	<nav id="tf-menu" >
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-             <div id="fh5co-logo"><a href="/home.html">AirBin<span>.</span></a></div>
+             <div id="fh5co-logo"><a href="/home.html">RestFor</a></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,6 +65,6 @@
 	<script src="/index/js/main.js"></script>
 	<!-- 登录判断 --> 
 	<script src="/index/js/restlogin.js"></script>
-	</body>
-</html>
+
+
 

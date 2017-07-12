@@ -16,7 +16,7 @@ import com.rest.common.util.CookieUtils;
 import com.rest.common.vo.SysResult;
 import com.rest.web.pojo.User;
 import com.rest.web.service.UserService;
-import com.sun.jmx.snmp.UserAcl;
+
 
 @Controller
 public class LoginAndRegistController {

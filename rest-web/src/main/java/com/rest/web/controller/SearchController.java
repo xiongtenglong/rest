@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -25,14 +24,14 @@ public class SearchController {
 
     @RequestMapping("/search")
     public String search(String q, Integer page, Model model) throws IOException, SolrServerException {
-        try {
-            q = new String(q.getBytes("iso8859-1"), "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            q = new String(q.getBytes("iso8859-1"), "utf-8");
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
         Integer rows = 20;
-        List<HouseInfo> itemList = searchService.queryItemList(q, page, rows);
-        model.addAttribute("itemList", itemList);
+        List<HouseInfo> houseInfoList = searchService.queryItemList(q, page, rows);
+        model.addAttribute("houseInfoList", houseInfoList);
         model.addAttribute("query", q);
         return "home/homelist";
     }
