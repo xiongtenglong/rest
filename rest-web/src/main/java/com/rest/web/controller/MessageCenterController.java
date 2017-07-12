@@ -39,7 +39,7 @@ public class MessageCenterController {
 			User user = messageCenterService.findUserById(userId);
 			model.addAttribute("user",user);
 		} catch (Exception e) {
-			return "/login.html";
+			return "redirect:/login.html";
 		}
 		return "center/center";
 	}
