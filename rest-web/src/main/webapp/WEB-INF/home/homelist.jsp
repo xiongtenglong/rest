@@ -3,13 +3,18 @@
 <script src="../../laydate/laydate.js"></script>
 <script type="text/javascript" src="../../show/js/jquery.min.js"></script>
 <script>
-    $(function () {
-        $(".houseDetail").click(function () {
-            alert("ahahha");
-            var a = $(".houseDetail");
-            alert(a.children().get(0).val());
-        });
+
+$().ready(function () {
+    $(".houseDetail").click(function () {
+//        alert("ahahha");
+        var a = $(this);
+        var val = a.children("input").val();
+//        alert(val);
+//        alert("localhost:9002/house/detail.html?houseId=" + val)
+        window.location.href = "http://localhost:9002/house/detail.html?houseId=" + val;
     });
+})
+
 </script>
 <html>
 <head>
@@ -21,7 +26,36 @@
 </head>
 
 <body id="'tujia'">
+<div class="hd-wrap-fluid ">
+    <div class="m-hd">
+        <div class="site-logo-cont">
+            <a href="https://www.tujia.com/" target="_blank" title="途家网首页" class="site-logo">途家网</a> <span class="logo-text">旅途中的家</span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li class="first"><a href="https://www.tujia.com/" class="home-link " target="_blank">首页</a></li>
 
+                <li><a href="https://www.tujia.com/villa/" target="_blank">别墅</a></li>
+                <li><a href="https://international.tujia.com/" target="_blank">海外公寓</a></li>
+
+                <li><a href="https://www.tujia.com/photowall/" target="_blank">特色民宿</a></li>
+                <li><a href="https://travel.tujia.com/" target="_blank">发现</a></li>
+                <li><a href="https://www.tujia.com/Experience/" target="_blank">体验房</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-link" lazyloadurl="https://vip.tujia.com/WebParts/Portal/UserInfo?isShowCreateNewStore=False">
+            <a href="https://passport.tujia.com/PortalSite/Register/" rel="nofollow" class="link-btn">注册</a> <a href="https://passport.tujia.com/PortalSite/LoginPage/" rel="nofollow">登录</a> <a href="https://merchantcrm.tujia.com/merchant-web/StoreApply/" target="_blank" rel="nofollow" class="t-link-btn">免费发布房屋</a>
+            <div id="mytujia" class="dn tl" style="display: none">
+                <div class="mytujiaWrapper" id="userMessage">
+                    <div class="p20">
+                        <img src="https://staticfile.tujia.com/Common/images/loader.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--- 面包屑  结束  -->
 
 <div class="wrap-large">
@@ -56,7 +90,7 @@
                     </div>
                     <div class="control-group date-group">
                         <span class="controls-span">入住</span>
-                        <div class="controls">
+                        <div class="controls" style="height: 24px">
                             <label for="startDate"> <input placeholder="请输入日期"
                                                            class="ipt-text startDate date laydate-icon" id="startDate" name="startDate"
                                                            type="text" value="2017-07-10" autocomplete="off"
@@ -325,7 +359,6 @@
                         <c:forEach items="${houseInfoList}" var="houseInfo">
                             <div class="houseDetail searchresult-cont new-searchresult-cont  clearfix"
                                  data-unitid="51919" data-growing-idx="1">
-                                你好${houseInfo.house_id}
                                 <input type="hidden" value="${houseInfo.house_id}" name="houseId">
                                 <div class="pic-box">
                                     <a href= ""  target="_blank" onclick="">
@@ -351,7 +384,7 @@
                                                 <span class="label-text">${houseInfo.address}</span>
                                             </div>
                                             <div class="text-description">
-                                                <span class="hotel-value">${houseInfo.evaluate}</span>分
+                                                <span class="hotel-value" >&nbsp;${houseInfo.evaluate / 10}</span>分
                                             </div>
                                         </div>
 

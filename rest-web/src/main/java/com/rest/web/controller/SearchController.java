@@ -24,11 +24,7 @@ public class SearchController {
 
     @RequestMapping("/search")
     public String search(String q, Integer page, Model model) throws IOException, SolrServerException {
-//        try {
-//            q = new String(q.getBytes("iso8859-1"), "utf-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
+
         Integer rows = 20;
         List<HouseInfo> houseInfoList = searchService.queryItemList(q, page, rows);
         model.addAttribute("houseInfoList", houseInfoList);
