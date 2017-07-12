@@ -6,17 +6,17 @@ import org.apache.solr.client.solrj.beans.Field;
 
 public class HouseInfo extends BasePojo {
 	@Field
-	private Long houseId;//房屋Id
+	private Long house_id;//房屋Id
 	@Field
-	private Long userId;//用户Id
+	private Long user_id;//用户Id
 	@Field
 	private String title;//标题
 	@Field
 	private Long price;//价格，单位：分
 	@Field
-	private String houseDesc;//描述
+	private String house_desc;//描述
 	@Field
-	private String imageUrl;//图片地址
+	private String image_url;//图片地址
 	@Field
 	private String address;//地址
 	@Field
@@ -28,19 +28,8 @@ public class HouseInfo extends BasePojo {
 	@Field
 	private Integer evaluate;
 	@Field
-	private Integer statusAuth;//认证状态：1-未认证，2-认证中，3-已认证
-	public Long getHouseId() {
-		return houseId;
-	}
-	public void setHouseId(Long houseId) {
-		this.houseId = houseId;
-	}
-	public Long getUserId() {
-		return userId;
-	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+	private Integer status_auth;//认证状态：1-未认证，2-认证中，3-已认证
+
 	public String getTitle() {
 		return title;
 	}
@@ -48,12 +37,7 @@ public class HouseInfo extends BasePojo {
 		this.title = title;
 	}
 
-	public String getHouseDesc() {
-		return houseDesc;
-	}
-	public void setHouseDesc(String houseDesc) {
-		this.houseDesc = houseDesc;
-	}
+
 
 	public Long getPrice() {
 		return price;
@@ -63,13 +47,6 @@ public class HouseInfo extends BasePojo {
 		this.price = price;
 	}
 
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
 
 	public String getAddress() {
 		return address;
@@ -89,12 +66,47 @@ public class HouseInfo extends BasePojo {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public Integer getStatusAuth() {
-		return statusAuth;
+
+	public Long getHouse_id() {
+		return house_id;
 	}
-	public void setStatusAuth(Integer statusAuth) {
-		this.statusAuth = statusAuth;
+
+	public void setHouse_id(Long house_id) {
+		this.house_id = house_id;
 	}
+
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
+	public String getHouse_desc() {
+		return house_desc;
+	}
+
+	public void setHouse_desc(String house_desc) {
+		this.house_desc = house_desc;
+	}
+
+	public String getImage_url() {
+		return image_url;
+	}
+
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
+	}
+
+	public Integer getStatus_auth() {
+		return status_auth;
+	}
+
+	public void setStatus_auth(Integer status_auth) {
+		this.status_auth = status_auth;
+	}
+
 	public Integer getEvaluate() {
 		return evaluate;
 	}
