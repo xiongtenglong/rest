@@ -25,7 +25,6 @@ public class HouseInfoService {
 		param.put("title", houseInfo.getTitle());
 		param.put("price", houseInfo.getPrice()+"");
 		param.put("houseDesc", houseInfo.getHouseDesc());
-		param.put("imagePath", houseInfo.getImagePath());
 		param.put("address", houseInfo.getAddress());
 		param.put("notice", houseInfo.getNotice());
 		
