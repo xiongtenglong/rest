@@ -11,30 +11,46 @@
 			<result column="out_status" property="outStatus"/>
 			<result column="new_price" property="newPrice"/>
 		</association>
+		<collection property="houseImages" ofType="HouseImage">
+			<id column="image_id" property="imageId"/>
+			<result column="himg_id" property="houseId"/>
+			<result column="image_url" property="imageUrl"/>
+		</collection>
 	</resultMap>
 	
 	<select id="queryHouseListByTimeArea" resultMap="houseInfoRM">
-		SELECT * 
-		FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
-		LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
-		WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2;
+		SELECT h.*,img.house_id himg_id,img.image_id,img.image_url
+		FROM
+			(SELECT * 
+			FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
+			LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
+			WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2 
+			LIMIT 20 ) h
+		LEFT JOIN (SELECT * FROM tb_house_image thi GROUP BY thi.house_id) img ON img.house_id=h.house_id 
 	</select>
 	
 	<select id="queryHouseOrder" resultMap="houseInfoRM">
-		SELECT * 
-		FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
-		LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
-		WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2 
-		ORDER BY h.${fieldN} ${condition};
+		SELECT h.*,img.house_id himg_id,img.image_id,img.image_url
+		FROM
+			(SELECT * 
+			FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
+			LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
+			WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2 
+			ORDER BY h.${fieldN} ${condition} 
+			LIMIT 20 )h
+		LEFT JOIN (SELECT * FROM tb_house_image thi GROUP BY thi.house_id) img ON img.house_id=h.house_id 
 	</select>
 	
 	<select id="queryHotHouseInfoTopTen" resultMap="houseInfoRM">
-		SELECT h.*,hs.*,IFNULL(h.evaluate,0)/h.price hot 
-		FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
-		LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
-		WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2 
-		ORDER BY hot DESC 
-		LIMIT 10;
+		SELECT h.*,img.house_id himg_id,img.image_id,img.image_url
+		FROM
+			(SELECT h.*,hs.*,IFNULL(h.evaluate,0)/h.price hot 
+			FROM (SELECT * FROM tb_house_info h WHERE h.`area_id`=#{areaId} AND h.`status`=1 AND h.`status_auth`=3) h
+			LEFT JOIN (SELECT hsi.house_id hid,hsi.`out_time`,hsi.`out_status`,hsi.new_price FROM tb_house_status hsi) hs ON h.`house_id`=hs.hid AND hs.`out_time`=#{outTime}  
+			WHERE IFNULL(hs.`out_status`,1) &lt;&gt; 2 
+			ORDER BY hot DESC 
+			LIMIT 10 ) h
+		LEFT JOIN (SELECT * FROM tb_house_image thi GROUP BY thi.house_id) img ON img.house_id=h.house_id 
 	</select>
 	<select id="queryHouseInfoById" resultMap="InfoRM">
 		SELECT h.*,img.house_id himg_id,img.image_id,img.image_url 
