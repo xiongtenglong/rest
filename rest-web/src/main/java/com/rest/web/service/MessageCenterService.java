@@ -26,14 +26,14 @@ public class MessageCenterService {
 	 * @throws Exception
 	 */
 	public User findUserById(Long userId) throws Exception {
-		String url = "manage.rest.com/messageCenter/findUser/"+userId;
+		String url = "http://manage.rest.com/messageCenter/findUser/"+userId;
 		String jsonData = httpClientService.doGet(url);
 		User user = OBJECTMAPPER.readValue(jsonData, User.class);
 		return user;
 	}
 	//获取个人房屋信息
 	public List<HouseInfo> findHouseById(Long id) throws Exception {
-		String url = "manage.rest.com/messageCenter/findhouse/"+id;
+		String url = "http://manage.rest.com/messageCenter/findhouse/"+id;
 		String jsonData = httpClientService.doGet(url);
 		JsonNode jsonNode = OBJECTMAPPER.readTree(jsonData);
         JsonNode data = jsonNode.get("data");
