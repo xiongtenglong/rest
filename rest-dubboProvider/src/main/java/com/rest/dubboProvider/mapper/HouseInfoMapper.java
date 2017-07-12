@@ -19,4 +19,6 @@ public interface HouseInfoMapper extends SysMapper<HouseInfo>{
 	
 	public List<HouseInfo> queryHotHouseInfoTopTen(@Param("outTime") Integer outTime, @Param("areaId") Integer areaId);
 
+	public HouseInfo queryHouseInfoById(Long houseId);
+
 }

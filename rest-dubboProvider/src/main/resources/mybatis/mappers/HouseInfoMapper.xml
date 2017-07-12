@@ -36,5 +36,18 @@
 		ORDER BY hot DESC 
 		LIMIT 10;
 	</select>
+	<select id="queryHouseInfoById" resultMap="InfoRM">
+		SELECT h.*,img.house_id himg_id,img.image_id,img.image_url 
+		FROM (SELECT * FROM tb_house_info h WHERE h.house_id=#{houseId}) h
+		LEFT JOIN tb_house_image img ON img.house_id=h.house_id 
+	</select>
+	<resultMap type="HouseInfo" id="InfoRM" autoMapping="true">
+		<id column="house_id" property="houseId"/>
+		<collection property="houseImages" ofType="HouseImage">
+			<id column="image_id" property="imageId"/>
+			<result column="himg_id" property="houseId"/>
+			<result column="image_url" property="imageUrl"/>
+		</collection>
+	</resultMap>
 
 </mapper>

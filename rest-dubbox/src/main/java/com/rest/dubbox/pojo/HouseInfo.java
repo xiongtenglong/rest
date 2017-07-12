@@ -3,6 +3,8 @@ package com.rest.dubbox.pojo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.rest.common.po.BasePojo;
 
+import java.util.List;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,14 +21,31 @@ public class HouseInfo extends BasePojo {
     private Long price;
     private String houseDesc;
     private String address;
-    private String imagePath;
     private String notice;
     private Integer status;
     private Integer statusAuth;
     private Integer evaluate;
     private HouseStatus houseStatus;
+    private List<HouseImage> houseImages;
+    private Integer areaId;
 
-    public HouseStatus getHouseStatus() {
+	public List<HouseImage> getHouseImages() {
+		return houseImages;
+	}
+
+	public void setHouseImages(List<HouseImage> houseImages) {
+		this.houseImages = houseImages;
+	}
+
+	public Integer getAreaId() {
+		return areaId;
+	}
+
+	public void setAreaId(Integer areaId) {
+		this.areaId = areaId;
+	}
+
+	public HouseStatus getHouseStatus() {
 		return houseStatus;
 	}
 
@@ -88,14 +107,6 @@ public class HouseInfo extends BasePojo {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
     }
 
     public String getNotice() {
