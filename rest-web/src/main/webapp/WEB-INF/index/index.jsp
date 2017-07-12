@@ -15,10 +15,10 @@
 							<h1>旅行中，像当地人一样生活</h1>
 							<h2></h2>
 							<div class="row">
-								<form class="form-inline" id="fh5co-header-subscribe" action="search.action" method="post">
+								<form class="form-inline" id="fh5co-header-subscribe" action="/search.html" method="post">
 									<div class="col-md-6 col-md-offset-3">
 										<div class="form-group">
-											<input type="text" class="form-control" name="address" placeholder="目的地，城市，地址">
+											<input type="text" class="form-control" name="q" placeholder="目的地，城市，地址">
 											<button type="submit" class="btn btn-default">搜索</button>
 										</div>
 									</div>
