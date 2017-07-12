@@ -51,23 +51,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-             <div id="fh5co-logo"><a href="home.action">AirBin<span>.</span></a></div>
+             <div id="fh5co-logo"><a href="/home.html">AirBin<span>.</span></a></div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="home.action" class="scroll123">主页</a></li>
-                <li><a href="center.action" class="scroll123">个人中心</a></li>
+                <li><a href="/home.html" class="scroll123">主页</a></li>
+                <li><a href="http://www.rest.com/service/user/mycenter" class="scroll123">个人中心</a></li>
                 <li><a href="houseAll.action" class="scroll123">房源</a></li>
-                <li><a href="story.action" class="scroll123">故事</a></li>
-				  <li class="top">
-					  <a href="#" class="top-weixin">
-						  手机端<div><img src="/index/images/index/ewm.jpg"></div>
-					  </a></li>
-				 
-				  	  <li id="registbar"><a href="/regist.html" class="scroll123">注册</a></li><!-- 注册 -->
-					  <li id="loginbar"><a href="/login.html" class="scroll123">登录</a></li><!-- 登录 -->
+			    <li id="registbar"><a href="/regist.html" class="scroll123">注册</a></li><!-- 注册 -->
+			    <li id="loginbar"><a href="/login.html" class="scroll123">登录</a></li><!-- 登录 -->
 				  
 				  
 			  </ul>
