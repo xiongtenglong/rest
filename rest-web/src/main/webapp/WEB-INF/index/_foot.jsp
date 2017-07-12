@@ -39,7 +39,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2017 西湖1703A 版权所有 <a href="http://www.tmooc.cn/" target="_blank" title="达内集团">达内集团</a></small> <small class="block"></small>
+						<small class="block">&copy; 2017 休憩网 版权所有 <a href="http://www.rest.com/" target="_blank" title="RestFor">休憩网</a></small> <small class="block"></small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
