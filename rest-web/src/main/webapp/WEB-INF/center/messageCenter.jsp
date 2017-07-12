@@ -72,7 +72,7 @@
 
        <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
-                	消息中心
+
             </div>
             <ol class="am-breadcrumb">
             </ol>

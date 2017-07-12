@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../../home/css_list">
 
 </head>
+
 <body id="'tujia'">
 
 <!--- 面包屑  结束  -->
@@ -515,35 +516,8 @@
     </div>
 
     <!-- foot -->
-    <div class="m-footer-link-list">
-        <a href="http://content.tujia.com/tujiajianjie.htm" target="_blank"
-           class="forst" rel="nofollow">关于我们</a>| <a
-            href="http://content.tujia.com/youkebangzhu.htm" target="_blank"
-            rel="nofollow">我是房客</a>| <a
-            href="http://content.tujia.com/qiyewenhua.htm" target="_blank"
-            rel="nofollow">加入途家</a>| <a href="https://www.tujia.com/sitemap.htm"
-                                        target="_blank">网站地图</a> | <a
-            href="https://m.tujia.com/hangzhou_gongyu/"
-            style="padding: 0 0 0 12px;">杭州酒店式公寓</a><span style="color: #666;">(手机版)</span>
-        <p>
-            © Copyright 2017 tujia.com 途家版权所有<span><a
-                href="http://www.miitbeian.gov.cn/" target="_blank"
-                style="padding: 0">京ICP证120277号</a></span> <span
-                style="display: inline-block; margin-left: 10px">京公网安备11010502027120</span>
-        </p>
-        <p class="safe-cont">
-            <a href="http://www.12377.cn/" target="_blank" rel="nofollow"><img
-                    src="../../home/safe-img1.jpg" alt="互联网违法和不良信息举报中心"
-                    width="138" height="40"></a> <a href="http://bj.cyberpolice.cn/"
-                                                    target="_blank" rel="nofollow"><img
-                src="../../home/safe-img3.jpg" alt="北京市公安局网络违法犯罪举报" width="98"
-                height="40"></a> <a
-                href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/PJ2017011301.html"
-                target="_blank" rel="nofollow"><img
-                src="../../home/net-img1.jpg" alt="企业信用评级" width="113"
-                height="40"></a>
-        </p>
-    </div>
+
 </div>
+
 </body>
 </html>
