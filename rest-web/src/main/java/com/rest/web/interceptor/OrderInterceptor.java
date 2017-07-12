@@ -23,7 +23,7 @@ public class OrderInterceptor implements HandlerInterceptor{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		String ticket=CookieUtils.getCookieValue(request, "JT_TICKET");
+		String ticket=CookieUtils.getCookieValue(request, "REST_TICKET");
 		if(StringUtils.isNotEmpty(ticket)){
 			String url="http://sso.rest.com/user/query/"+ticket;
 			String result =httpClientService.doGet(url);

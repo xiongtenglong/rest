@@ -22,14 +22,55 @@
 </head>
 
 <body data-type="index" style="margin:0 200px">
-<%@include file="/WEB-INF/center/center_head.jsp" %>
+<%@include file="/WEB-INF/index/_head.jsp" %>
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            用户中心
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="userInfo" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-key"></i>
+                        <span>个人资料</span>
+                    </a>
+                </li>
+                <%--<li class="tpl-left-nav-item">--%>
+                <%--<a href="messageCenter" class="nav-link active">--%>
+                <%--<i class="am-icon-bar-chart"></i>--%>
+                <%--<span>消息中心</span>--%>
+                <%--<i class="tpl-left-nav-content tpl-badge-danger">0</i>--%>
+                <%--</a>--%>
+                <%--</li>--%>
 
+                <li class="tpl-left-nav-item">
+                    <a href="houseMessage" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-home"></i>
+                        <span>房屋信息</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="order" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-table"></i>
+                        <span>订单信息</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="uppassword" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>修改密码</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <div class="tpl-page-container tpl-page-header-fixed">
-
-
-
-
+        <form method="post" action="saveUser">
         <div class="tpl-content-wrapper">
             <div class="tpl-content-page-title">
                 个人资料
@@ -56,35 +97,48 @@
                         <table style="color: #8f0222">
                             <tr>
                                 <td style=" align-content: center">用户名:</td>
-                                <td style="align-content: center">${user.username}</td>
+                                <td style="align-content: center"><input type="text" name="username" value="${user.username}" readonly="readonly"/></td>
+                            </tr>
+                            <tr>
+                                <td style="align-content: center">真实姓名:</td>
+                                <td style="align-content: center"><input type="text" name="userInfo.name" value="${user.userInfo.name}" /></td>
+                            </tr>
+                            <tr>
+                                <td style=" align-content: center">邮箱:</td>
+                                <td style="align-content: center"><input type="text" name="email" value="${user.userInfo.email}"/></td>
                             </tr>
                             <tr>
                                 <td style=" align-content: center">性别:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
+                                <td style="align-content: center">
+                                    <input type="radio" name="userInfo.gender" value="男" <c:if test="${user.userInfo.gender=='男' }">checked="checked"</c:if>/>男
+                                    <input type="radio" name="userInfo.gender" value="女" <c:if test="${user.userInfo.gender=='女' }">checked="checked"</c:if>/>女
+                                </td>
                             </tr>
                             <tr>
                                 <td style=" align-content: center">身份证号:</td>
-                                <td style=" align-content: center">${user.password}</td>
+                                <td style=" align-content: center"><input type="text" name="userInfo.cardNo" value="${user.userInfo.cardNo}"/></td>
                             </tr>
                             <tr>
-                                <td style=" align-content: center">认证状态:</td>
-                                <td style=" align-content: center">${user.userInfo.sex}</td>
+                                <td style=" align-content: center">实名认证:</td>
+                                <td style=" align-content: center">
+                                    <input type="radio" name="userInfo.state" value="0" <c:if test="${user.userInfo.state==1 }">checked="checked"</c:if> readonly="readonly"/>未认证
+                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.state==2 }">checked="checked"</c:if> readonly="readonly"/>认证中
+                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.state==3 }">checked="checked"</c:if> readonly="readonly"/>已认证
+                                </td>
 
                             </tr>
-		                    <tr>
-                                <td style=" align-content: center">邮件:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
-                            </tr>
+
                             <tr>
                                 <td style=" align-content: center">用户级别:</td>
-                                <td style="align-content: center">${user.userInfo.age}</td>
+                                <td style="align-content: center"><input type="text" name="userInfo.grade" value="${user.userInfo.grade}" readonly="readonly"/></td>
                             </tr>
                         </table>
                     </div>
                 </div>
 
             </div>
-
+        </div>
+        </form>
            <%--  <div class="row">
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
                     <div class="tpl-portlet">

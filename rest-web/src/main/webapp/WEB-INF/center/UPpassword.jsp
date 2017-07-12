@@ -25,6 +25,51 @@
 
 <%@include file="/WEB-INF/index/_head.jsp" %>
 
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            用户中心
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="userInfo" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-key"></i>
+                        <span>个人资料</span>
+                    </a>
+                </li>
+                <%--<li class="tpl-left-nav-item">--%>
+                <%--<a href="messageCenter" class="nav-link active">--%>
+                <%--<i class="am-icon-bar-chart"></i>--%>
+                <%--<span>消息中心</span>--%>
+                <%--<i class="tpl-left-nav-content tpl-badge-danger">0</i>--%>
+                <%--</a>--%>
+                <%--</li>--%>
+
+                <li class="tpl-left-nav-item">
+                    <a href="houseMessage" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-home"></i>
+                        <span>房屋信息</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="order" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-table"></i>
+                        <span>订单信息</span>
+                    </a>
+                </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="uppassword" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-wpforms"></i>
+                        <span>修改密码</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
     <form method="post" action="/saveUser">
 
         <div class="tpl-content-wrapper">

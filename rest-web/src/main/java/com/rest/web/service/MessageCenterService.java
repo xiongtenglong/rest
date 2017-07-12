@@ -2,14 +2,15 @@ package com.rest.web.service;
 
 import java.util.List;
 
+import com.rest.dubbox.pojo.HouseInfo;
+import com.rest.dubbox.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.common.service.HttpClientService;
-import com.rest.web.pojo.HouseInfo;
-import com.rest.web.pojo.User;
+
 
 @Service
 public class MessageCenterService {
@@ -20,12 +21,12 @@ public class MessageCenterService {
 	private static final ObjectMapper OBJECTMAPPER = new ObjectMapper();
 	/**
 	 * 获取个人信息
-	 * @param id
+	 * @param userId
 	 * @return
 	 * @throws Exception
 	 */
-	public User findUserById(Long id) throws Exception {
-		String url = "manage.rest.com/messageCenter/findUser/"+id;
+	public User findUserById(Long userId) throws Exception {
+		String url = "manage.rest.com/messageCenter/findUser/"+userId;
 		String jsonData = httpClientService.doGet(url);
 		User user = OBJECTMAPPER.readValue(jsonData, User.class);
 		return user;

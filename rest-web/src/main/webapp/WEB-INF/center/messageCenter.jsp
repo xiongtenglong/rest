@@ -30,35 +30,35 @@
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
-                    <a href="center.action" class="nav-link tpl-left-nav-link-list">
+                    <a href="userInfo" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-key"></i>
                         <span>个人资料</span>
                     </a>
                 </li>
-                <li class="tpl-left-nav-item">
-                    <a href="messageCenter.action" class="nav-link active">
-                        <i class="am-icon-bar-chart"></i>
-                        <span>消息中心</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">0</i>
-                    </a>
-                </li>
+                <%--<li class="tpl-left-nav-item">--%>
+                    <%--<a href="messageCenter" class="nav-link active">--%>
+                        <%--<i class="am-icon-bar-chart"></i>--%>
+                        <%--<span>消息中心</span>--%>
+                        <%--<i class="tpl-left-nav-content tpl-badge-danger">0</i>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
 
                 <li class="tpl-left-nav-item">
-                    <a href="houseMessage.action" class="nav-link tpl-left-nav-link-list">
+                    <a href="houseMessage" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-home"></i>
                         <span>房屋信息</span>
                     </a>
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="orderMessage.action" class="nav-link tpl-left-nav-link-list">
+                    <a href="order" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-table"></i>
                         <span>订单信息</span>
                     </a>
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="storyMessage.action" class="nav-link tpl-left-nav-link-list">
+                    <a href="uppassword" class="nav-link tpl-left-nav-link-list">
                         <i class="am-icon-wpforms"></i>
                         <span>修改密码</span>
                     </a>
@@ -86,11 +86,11 @@
                         <div class="tpl-portlet-title">
                             <div class="tpl-caption font-green ">
                                 <i class="am-icon-cloud-download"></i>
-                                <span> 系统消息</span>
+                                <span> 用户名</span>
                             </div>
                         </div>
 
-                        邀请好友，赚取$18。
+                        ${user.username}
                     </div>
                 </div>
                 <div class="am-u-md-6 am-u-sm-12 row-mb">
@@ -98,11 +98,11 @@
                         <div class="tpl-portlet-title">
                             <div class="tpl-caption font-red ">
                                 <i class="am-icon-bar-chart"></i>
-                                <span>社交信息</span>
+                                <span>手机号</span>
                             </div>
-                           
+
                         </div>
-                        添加工作邮箱，在您首次踏上商务差旅之后获得$69的旅行基金。
+                        ${user.phone}
                     </div>
                 </div>
             </div>

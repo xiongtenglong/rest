@@ -21,10 +21,10 @@ public class MessageCenterController {
 	 * 信息中心查询用户信息
 	 * @return
 	 */
-	@RequestMapping("/findUser/{id}")
+	@RequestMapping("/findUser/{userId}")
 	@ResponseBody
-	public User findUser(@PathVariable Long id) {
-		User user = messageCenterService.findUserById(id);
+	public User findUser(@PathVariable Long userId) {
+		User user = messageCenterService.findUserById(userId);
 		return user;
 	}
 	

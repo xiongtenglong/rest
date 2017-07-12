@@ -46,6 +46,9 @@
 			<mvc:mapping path="/order/**"/>
 			<bean class="com.rest.web.interceptor.OrderInterceptor"/>
 		</mvc:interceptor>
-		
+		<mvc:interceptor >
+			<mvc:mapping path="/user/**"/>
+			<bean class="com.rest.web.interceptor.OrderInterceptor"/>
+		</mvc:interceptor>
 	</mvc:interceptors>
 </beans>

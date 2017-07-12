@@ -1,6 +1,4 @@
 
-
-
 var REST = {
 		checkLogin : function(){
 			var ticket = $.cookie("REST_TICKET");
