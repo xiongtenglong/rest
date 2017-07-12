@@ -3,6 +3,7 @@ package com.rest.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,8 +50,13 @@ public class LoginAndRegistController {
 	
 	//登录
 	@RequestMapping("/doLogin")
-	public String doLogin(String username,String password,HttpServletRequest request,HttpServletResponse response){
+	public String doLogin(String username,String password,Model model, HttpServletRequest request,HttpServletResponse response){
 		String ticket = userService.saveLogin(username, password);
+		if(StringUtils.isEmpty(ticket)){
+			model.addAttribute("msg", "用户名或密码错误");
+			return "forward:/login.html";
+			
+		}
 		String cookieName = "REST_TICKET";
 		//将ticket放在本地的浏览器的cookie中，作为唯一标识，可以同可ticket从redis获取用户信息
 		CookieUtils.setCookie(request, response, cookieName, ticket, 60*60*24*7);

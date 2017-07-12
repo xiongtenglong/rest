@@ -113,7 +113,7 @@
 											<form action="/service/doLogin" method="post" id="loginform">
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="username">用户名:</label>
+														<label for="username">用户名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:8px;color:red;">${msg }</span></label>
 														<input type="text" placeholder="username" class="form-control" id="username" name="username" />
 													</div>
 												</div>
