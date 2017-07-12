@@ -59,4 +59,10 @@ public class DubboxHouseInfoServiceImpl extends BaseService<HouseInfo> implement
 		return data;
 	}
 
+	@Override
+	public HouseInfo queryOneByHouseId(Long houseId) {
+		
+		return null;
+	}
+
 }
