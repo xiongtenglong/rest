@@ -30,7 +30,7 @@
 	<bean class="com.rest.common.util.IdleConnectionEvictor" destroy-method="shutdown">
 		<constructor-arg index="0" ref="httpClientConnectionManager" />
 		<!-- 间隔一分钟清理一次 -->
-		<constructor-arg index="1" value="6000000" />
+		<constructor-arg index="1" value="60000" />
 	</bean>
 	
 	<!-- 定义requestConfig的工厂 -->

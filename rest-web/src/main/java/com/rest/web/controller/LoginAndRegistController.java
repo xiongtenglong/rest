@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rest.common.util.CookieUtils;
 import com.rest.common.vo.SysResult;
-import com.rest.web.pojo.User;
+import com.rest.dubbox.pojo.User;
 import com.rest.web.service.UserService;
 
 

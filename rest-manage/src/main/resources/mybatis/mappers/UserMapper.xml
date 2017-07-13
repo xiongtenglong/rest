@@ -60,6 +60,13 @@
         </foreach>
         )
     </update>
+    
+   <!--  根据id查询user -->
+   <select id="selectUserByPrimaryKey" resultMap="userRM">
+   		SELECT *
+		FROM (SELECT * FROM tb_user u WHERE u.id=#{id}) u
+		LEFT JOIN tb_user_info ui ON u.id=ui.user_info_id 
+   </select>
 
 	
 </mapper>

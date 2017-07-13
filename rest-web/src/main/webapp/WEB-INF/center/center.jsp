@@ -121,9 +121,9 @@
                             <tr>
                                 <td style=" align-content: center">实名认证:</td>
                                 <td style=" align-content: center">
-                                    <input type="radio" name="userInfo.state" value="0" <c:if test="${user.userInfo.state==1 }">checked="checked"</c:if> readonly="readonly"/>未认证
-                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.state==2 }">checked="checked"</c:if> readonly="readonly"/>认证中
-                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.state==3 }">checked="checked"</c:if> readonly="readonly"/>已认证
+                                    <input type="radio" name="userInfo.state" value="0" <c:if test="${user.userInfo.status==1 }">checked="checked"</c:if> readonly="readonly"/>未认证
+                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.status==2 }">checked="checked"</c:if> readonly="readonly"/>认证中
+                                    <input type="radio" name="userInfo.state" value="1" <c:if test="${user.userInfo.status==3 }">checked="checked"</c:if> readonly="readonly"/>已认证
                                 </td>
 
                             </tr>

@@ -18,7 +18,7 @@ public class MessageCenterService {
 	private HouseInfoMapper houseInfoMapper;
 	//根据ID查询用户信息
 	public User findUserById(Long id) {
-		User user = userMapper.selectByPrimaryKey(id);
+		User user = userMapper.selectUserByPrimaryKey(id);
 		return user;
 	}
 	public List<HouseInfo> findHouseById(Long id) {

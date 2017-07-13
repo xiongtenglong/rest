@@ -100,11 +100,11 @@
                        <%-- <br/>
                         房东姓名:${}--%>
                         <br/>
-                        创建时间:${order.createTime}
+                        创建时间:${order.created}
                         <br/>
                         支付状态:
-                        <c:if test="${order.paystate ==1}"><font color="green">已支付</font></c:if>
-                        <c:if test="${order.paystate ==0}"><font color="red">未支付</font></c:if>
+                        <c:if test="${order.status ==1}"><font color="green">已支付</font></c:if>
+                        <c:if test="${order.status ==0}"><font color="red">未支付</font></c:if>
                         <br/>
                         <button  class="btn btn-default"><a href="/updateOrder.action?orderId=${order.orderId}" >确认</a></button>
                         <button  class="btn btn-default"><a href="/deleteOrder.action?orderId=${order.orderId}" >删除</a></button>

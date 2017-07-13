@@ -18,6 +18,13 @@ public class User extends BasePojo{
 	@JsonIgnore
 	private String password;
 	private String phone;
+	private UserInfo userInfo;  //用户的扩展信息
+	public UserInfo getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
+	}
 	public Long getId() {
 		return id;
 	}

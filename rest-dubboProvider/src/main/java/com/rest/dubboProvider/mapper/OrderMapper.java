@@ -1,5 +1,6 @@
 package com.rest.dubboProvider.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 import com.rest.common.mapper.SysMapper;
@@ -14,4 +15,11 @@ public interface OrderMapper extends SysMapper<Order> {
 	 */
 	public List<Order> selectByUserId(Long userId);
 
+	/**
+	 * 定时清理未完成订单
+	 * @param date
+	 */
+	/*
+	public void paymentOrderScan(Date date);
+*/
 }

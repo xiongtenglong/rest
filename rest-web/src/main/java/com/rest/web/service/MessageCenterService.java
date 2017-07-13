@@ -3,7 +3,8 @@ package com.rest.web.service;
 import java.util.List;
 
 import com.rest.dubbox.pojo.HouseInfo;
-import com.rest.dubbox.pojo.User;
+import com.rest.web.pojo.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +27,14 @@ public class MessageCenterService {
 	 * @throws Exception
 	 */
 	public User findUserById(Long userId) throws Exception {
-		String url = "http://manage.rest.com/messageCenter/findUser/"+userId;
+		String url = "http://manage.rest.com:9001/messageCenter/findUser/"+userId;
 		String jsonData = httpClientService.doGet(url);
 		User user = OBJECTMAPPER.readValue(jsonData, User.class);
 		return user;
 	}
 	//获取个人房屋信息
 	public List<HouseInfo> findHouseById(Long id) throws Exception {
-		String url = "http://manage.rest.com/messageCenter/findhouse/"+id;
+		String url = "http://manage.rest.com:9001/messageCenter/findhouse/"+id;
 		String jsonData = httpClientService.doGet(url);
 		JsonNode jsonNode = OBJECTMAPPER.readTree(jsonData);
         JsonNode data = jsonNode.get("data");

@@ -2,7 +2,9 @@ package com.rest.web.controller;
 
 import java.util.List;
 
+import com.rest.dubbox.pojo.Order;
 import com.rest.dubbox.pojo.User;
+import com.rest.dubbox.service.DubboxOrderService;
 import com.rest.web.utils.UserThreadLocal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ import com.rest.web.service.MessageCenterService;
 public class MessageCenterController {
 	@Autowired
 	private MessageCenterService messageCenterService;
+	@Autowired 
+	private DubboxOrderService dubboxOrderService;
 	/**
 	 * 转向个人中心
 	 * @return
@@ -31,12 +35,13 @@ public class MessageCenterController {
 	 * 获取个人信息
 	 * @param model
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping("userInfo")
-	public String toCenter(Model model) {
+	public String toCenter(Model model) throws Exception {
 		Long userId = UserThreadLocal.getUserId();
 		try {
-			User user = messageCenterService.findUserById(userId);
+			com.rest.web.pojo.User user = messageCenterService.findUserById(userId);
 			model.addAttribute("user",user);
 		} catch (Exception e) {
 			return "redirect:/login.html";
@@ -59,7 +64,10 @@ public class MessageCenterController {
 	 */
 	@RequestMapping("order")
 	public String order(Model model) {
-
+		Long userId = UserThreadLocal.getUserId();
+		List<Order> orderList = dubboxOrderService.fandOrderByUserId(userId);
+		model.addAttribute("orderList",orderList);
+		
 		return "center/order";
 	}
 	/**

@@ -22,4 +22,11 @@ public interface UserMapper extends SysMapper<User> {
 
 
     void updateStatus(Map<String, Object> map);
+
+    /**
+     * 根据主键查询user信息
+     * @param id 
+     * @return user对象
+     */
+	public User selectUserByPrimaryKey(Long id);
 }
