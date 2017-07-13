@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +17,7 @@ import com.rest.web.service.HouseInfoService;
 
 @Controller
 @RequestMapping("/house")
-public class HouseInfoController {
+public class HouseInfoController extends BaseController{
 	@Autowired
 	private HouseInfoService houseInfoService;
 	@Autowired
@@ -25,13 +26,15 @@ public class HouseInfoController {
 	/**
 	 * 按照区id和开始时间查询房源信息
 	 * @param areaId
-	 * @param startTime
+	 * @param startDate
 	 * @return
 	 */
-	@RequestMapping("/validHouse/{areaId}")
-	@ResponseBody
-	public SysResult queryHouseListByTimeArea(@PathVariable Integer areaId,Date startTime){
-		return dubboxHouseInfoService.queryHouseListByTimeArea(startTime, areaId);
+	@RequestMapping("/validHouse")
+	public String queryHouseListByTimeArea(Integer areaId,Date startDate, Model model){
+		SysResult sysResult = dubboxHouseInfoService.queryHouseListByTimeArea(startDate, areaId);
+		List<HouseInfo> data = (List<HouseInfo>) sysResult.getData();
+		model.addAttribute("houseInfoList", data);
+		return "home/homelist";
 	}
 	
 	/**
@@ -94,10 +97,10 @@ public class HouseInfoController {
 	
 	/**
 	 * 根据房屋id查找房屋
-	 * @param houseInfo
+	 * @param houseId
 	 * @return
 	 */
-	//@RequestMapping("")
+//	@RequestMapping("/detail")
 	@ResponseBody
 	public SysResult findOne(@PathVariable Long houseId){
 		try {
@@ -108,7 +111,21 @@ public class HouseInfoController {
 			return SysResult.build(201, "查看房屋信息失败！");
 		}
 	}
-	
+
+
+	/**
+	 * 根据房屋id查找房屋
+	 * @param houseId
+	 * @return
+	 */
+	@RequestMapping("/detail")
+	public String toHouseDetail(Long houseId, Model model){
+		HouseInfo houseInfo = dubboxHouseInfoService.queryOneByHouseId(houseId);
+		model.addAttribute("houseInfo", houseInfo);
+		model.addAttribute("imageList", houseInfo.getHouseImages().subList(0,2));
+		return "/home/home";
+
+	}
 	
 	
 }
