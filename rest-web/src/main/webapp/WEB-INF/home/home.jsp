@@ -41,45 +41,6 @@
         </div>
     </div>
 </div>
-<div class="hd-wrap-fluid ">
-    <div class="m-hd">
-        <div class="site-logo-cont">
-            <a href="https://www.tujia.com/" target="_blank" title="途家网首页"
-               class="site-logo">途家网</a> <span class="logo-text">旅途中的家</span>
-        </div>
-        <div class="nav-list">
-            <ul>
-                <li class="first"><a href="https://www.tujia.com/"
-                                     class="home-link " target="_blank">首页</a></li>
-
-                <li><a href="https://www.tujia.com/villa/" target="_blank">别墅</a></li>
-                <li><a href="https://international.tujia.com/" target="_blank">海外公寓</a></li>
-
-                <li><a href="https://www.tujia.com/photowall/" target="_blank">特色民宿</a></li>
-                <li><a href="https://travel.tujia.com/" target="_blank">发现</a></li>
-                <li><a href="https://www.tujia.com/Experience/"
-                       target="_blank">体验房</a></li>
-            </ul>
-        </div>
-
-        <div class="sub-link"
-             lazyloadurl="https://vip.tujia.com/WebParts/Portal/UserInfo?isShowCreateNewStore=False">
-            <a href="https://passport.tujia.com/PortalSite/Register/"
-               rel="nofollow" class="link-btn">注册</a> <a
-                href="https://passport.tujia.com/PortalSite/LoginPage/"
-                rel="nofollow">登录</a> <a
-                href="https://merchantcrm.tujia.com/merchant-web/StoreApply/"
-                target="_blank" rel="nofollow" class="t-link-btn">免费发布房屋</a>
-            <div id="mytujia" class="dn tl" style="display: none">
-                <div class="mytujiaWrapper" id="userMessage">
-                    <div class="p20">
-                        <img src="https://staticfile.tujia.com/Common/images/loader.gif">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div align="center">
 
